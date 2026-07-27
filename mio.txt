@@ -1,0 +1,65 @@
+
+linkedin: https://www.linkedin.com/in/samuelecarpani/?locale=en
+
+
+FIX:
+    usa questa immagine profilo :
+        -> /home/sam/Downloads/1775380062088.jpeg
+
+
+    prendi i dati per experience, eduction skill, ecc.. da linkedin
+        -> https://www.linkedin.com/in/samuelecarpani/?locale=en
+
+        questi salvaili in un JSON pratico che possa modifcare in autonomia
+
+    --
+
+    brand con cui ho lavorato mettere log nel banner (
+        Unipol
+        Direq
+        Rate
+        Refida
+        Edooko
+    )
+
+progetti:
+
+
+    refida -> https://refida.eu/ 
+        codebase -> /home/sam/src/altri/fidara
+
+    rate -> https://myrate.me/    
+        codebase -> /sam/src/altri/Rate
+
+    helperclock -> /home/sam/src/altri/helper_clock
+
+
+
+
+    thera (codebase screen) -> /home/sam/src/altri/Thera
+
+    emailradar -> /home/sam/src/altri/EmailRadar
+
+    tactica -> /home/sam/src/altri/tactica
+
+    aoefight simulator -> /home/sam/src/altri/aoefightsimulator
+
+    trendr -> /home/sam/src/altri/trendr
+
+    queeup -> /home/sam/src/altri/QueeUp
+
+
+
+    sonic -> /home/sam/src/altri/sonic
+
+    sonar -> /home/sam/src/altri/sonar
+
+
+    signal -> /home/sam/src/altri/signal
+
+    packaege -> /home/sam/src/altri/package
+
+
+    template -> /home/sam/src/altri/template
+
+    edooko: (codebase screen)

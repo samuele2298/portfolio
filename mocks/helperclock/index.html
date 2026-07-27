@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HelperClock — Demo mock</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --surface: #ffffff; --border: #e3e5ea;
+    --text: #1b1d24; --text-dim: #6b6f7b;
+    --accent: #2f9e6f; --accent-soft: #e6f7ee;
+    --red: #d64545; --red-soft: #fbe9e9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', Inter, sans-serif; background: var(--bg); color: var(--text); }
+  .banner { background: #1b1d24; color: #fff; text-align: center; font-size: 0.78rem; padding: 6px 12px; }
+
+  .phone {
+    max-width: 380px; margin: 32px auto; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 24px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .phone-header { padding: 22px 22px 6px; }
+  .phone-header h1 { font-size: 1.2rem; }
+  .phone-header p { color: var(--text-dim); font-size: 0.85rem; margin-top: 2px; }
+
+  .clock-card { margin: 18px 22px; background: var(--accent-soft); border-radius: 18px; padding: 24px; text-align: center; }
+  .clock-time { font-size: 2.4rem; font-weight: 700; font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+  .clock-status { color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 18px; }
+  .clock-status.off { color: var(--red); }
+
+  .btn { border: none; border-radius: 999px; padding: 14px 32px; font-weight: 700; font-size: 0.95rem; cursor: pointer; }
+  .btn-in { background: var(--accent); color: #fff; }
+  .btn-out { background: var(--red); color: #fff; }
+
+  .section-title { padding: 0 22px; font-size: 0.8rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 22px 0 10px; }
+
+  .day-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 22px; border-top: 1px solid var(--border); font-size: 0.88rem;
+  }
+  .day-row .hours { font-weight: 700; }
+  .day-row.today { background: var(--accent-soft); }
+
+  .week-total { display: flex; justify-content: space-between; padding: 16px 22px; background: #fafbfc; border-top: 1px solid var(--border); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="banner">Demo mock statico — dati di esempio, nessun backend reale</div>
+
+<div class="phone">
+  <div class="phone-header">
+    <h1>HelperClock</h1>
+    <p>Lun 27 Luglio 2026</p>
+  </div>
+
+  <div class="clock-card">
+    <div class="clock-time" id="clockTime">02:14:37</div>
+    <div class="clock-status" id="clockStatus">In servizio dalle 08:32</div>
+    <button class="btn btn-out" id="clockBtn">Timbra uscita</button>
+  </div>
+
+  <div class="section-title">Questa settimana</div>
+  <div class="day-row today"><span>Lunedì 27</span><span class="hours" id="todayHours">2h 14m</span></div>
+  <div class="day-row"><span>Venerdì 24</span><span class="hours">7h 48m</span></div>
+  <div class="day-row"><span>Giovedì 23</span><span class="hours">8h 02m</span></div>
+  <div class="day-row"><span>Mercoledì 22</span><span class="hours">7h 55m</span></div>
+  <div class="day-row"><span>Martedì 21</span><span class="hours">8h 10m</span></div>
+
+  <div class="week-total"><span>Totale settimana</span><span id="weekTotal">34h 09m</span></div>
+</div>
+
+<script>
+  let clockedIn = true;
+  let seconds = 2 * 3600 + 14 * 60 + 37;
+
+  const timeEl = document.getElementById('clockTime');
+  const statusEl = document.getElementById('clockStatus');
+  const btnEl = document.getElementById('clockBtn');
+  const todayEl = document.getElementById('todayHours');
+
+  function format(s) {
+    const h = String(Math.floor(s / 3600)).padStart(2, '0');
+    const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+    const sec = String(s % 60).padStart(2, '0');
+    return `${h}:${m}:${sec}`;
+  }
+
+  function formatShort(s) {
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    return `${h}h ${String(m).padStart(2, '0')}m`;
+  }
+
+  setInterval(() => {
+    if (clockedIn) {
+      seconds += 1;
+      timeEl.textContent = format(seconds);
+      todayEl.textContent = formatShort(seconds);
+    }
+  }, 1000);
+
+  btnEl.addEventListener('click', () => {
+    clockedIn = !clockedIn;
+    if (clockedIn) {
+      statusEl.textContent = 'In servizio dalle 08:32';
+      statusEl.classList.remove('off');
+      btnEl.textContent = 'Timbra uscita';
+      btnEl.className = 'btn btn-out';
+    } else {
+      statusEl.textContent = 'Fuori servizio';
+      statusEl.classList.add('off');
+      btnEl.textContent = 'Timbra entrata';
+      btnEl.className = 'btn btn-in';
+    }
+  });
+</script>
+
+</body>
+</html>

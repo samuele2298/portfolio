@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it" data-field="htmlLang">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuele Carpani — Full Stack Developer</title>
+<meta name="description" content="Full stack products, end to end. Portfolio di Samuele Carpani, Full Stack Developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo" data-field="logo"></a>
+    <nav class="main-nav">
+      <a href="#services" data-field="navServices"></a>
+      <a href="#projects" data-field="navProjects"></a>
+      <a href="#skills" data-field="navSkills"></a>
+      <a href="#experience" data-field="navExperience"></a>
+      <a href="#formation" data-field="navFormation"></a>
+      <a href="#hobbies" data-field="navHobbies"></a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Lingua / Language">
+      <button type="button" data-lang-btn="it">IT</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <a href="#contact" class="btn btn-primary btn-small" data-field="navContact"></a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow" data-field="role"></p>
+        <h1 data-field="name"></h1>
+        <p class="hero-sub" data-field="tagline"></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-field="heroCtaWork"></a>
+          <a href="#contact" class="btn btn-ghost" data-field="heroCtaContact"></a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-photo">
+          <img data-field="photo" alt="" onerror="this.parentElement.classList.add('photo-fallback')">
+        </div>
+      </div>
+    </div>
+
+    <div class="brands">
+      <div class="container">
+        <p class="brands-label" data-field="brandsLabel"></p>
+        <ul class="brands-list" data-field="brands"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <p class="eyebrow" data-field="projectsEyebrow"></p>
+      <h2 data-field="projectsHeading"></h2>
+      <p class="section-lead" data-field="projectsLead"></p>
+
+      <div class="project-grid" data-field="projects"></div>
+    </div>
+  </section>
+
+  <!-- WHAT I BRING -->
+  <section id="skills" class="section section-muted">
+    <div class="container">
+      <p class="eyebrow" data-field="bringEyebrow"></p>
+      <h2 data-field="bringHeading"></h2>
+
+      <div class="bring-grid">
+        <div class="bring-card">
+          <div class="bring-icon">{ }</div>
+          <h3 data-field="bringEngineering"></h3>
+          <p data-field="skillsEngineering"></p>
+        </div>
+        <div class="bring-card">
+          <div class="bring-icon">$</div>
+          <h3 data-field="bringProduct"></h3>
+          <p data-field="skillsProduct"></p>
+        </div>
+        <div class="bring-card">
+          <div class="bring-icon">→</div>
+          <h3 data-field="bringWaysOfWorking"></h3>
+          <p data-field="skillsWaysOfWorking"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <p class="eyebrow" data-field="experienceEyebrow"></p>
+      <h2 data-field="experienceHeading"></h2>
+
+      <ol class="timeline" data-field="experience"></ol>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section-muted">
+    <div class="container">
+      <p class="eyebrow" data-field="servicesEyebrow"></p>
+      <h2 data-field="servicesHeading"></h2>
+
+      <div class="service-grid" data-field="services"></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow" data-field="stackEyebrow"></p>
+      <h2 data-field="stackHeading"></h2>
+
+      <ul class="stack-grid" data-field="stack"></ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="formation" class="section section-muted">
+    <div class="container">
+      <p class="eyebrow" data-field="educationEyebrow"></p>
+      <h2 data-field="educationHeading"></h2>
+
+      <ul class="education-list" data-field="education"></ul>
+    </div>
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies" class="section">
+    <div class="container">
+      <p class="eyebrow" data-field="hobbiesEyebrow"></p>
+      <h2 data-field="hobbiesHeading"></h2>
+
+      <div class="hobby-grid" data-field="hobbies"></div>
+
+      <div class="highlight-grid" data-field="highlights"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-muted">
+    <div class="container">
+      <p class="eyebrow" data-field="testimonialsEyebrow"></p>
+      <h2 data-field="testimonialsHeading"></h2>
+
+      <div class="testimonial-grid" data-field="testimonials"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="section cta-section">
+    <div class="container cta-inner">
+      <h2 data-field="contactHeading"></h2>
+      <p data-field="contactLead"></p>
+      <div class="cta-actions" data-field="contactActions"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> <span data-field="footerName"></span>. <span data-field="footerRights"></span></p>
+    <a data-field="footerLinkedin" target="_blank" rel="noopener"></a>
+  </div>
+</footer>
+
+<!-- PROJECT DETAIL MODAL -->
+<div class="modal-overlay" id="projectModal" aria-hidden="true">
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Chiudi">&times;</button>
+    <div class="modal-content">
+      <p class="eyebrow" data-field="modalTag"></p>
+      <h2 id="modalTitle" data-field="modalTitle"></h2>
+      <p class="modal-desc" data-field="modalShortDescription"></p>
+      <div class="modal-actions" data-field="modalActions"></div>
+
+      <div class="modal-screens" data-field="modalScreens"></div>
+
+      <div class="modal-body" data-field="modalDescription"></div>
+
+      <div data-section="modalStack">
+        <h3 class="modal-subhead" data-field="modalStackHeading"></h3>
+        <ul class="stack-grid" data-field="modalStack"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
