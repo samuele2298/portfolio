@@ -31,7 +31,11 @@ const PROFILE_SHARED = {
   "cv": ""
 };
 
-const BRANDS = ["Unipol", "Direq", "Rate", "Refida", "Edooko"];
+const BRANDS = [
+  { "name": "Rate", "logo": "assets/images/brands/rate.png" },
+  { "name": "Unipol", "logo": "assets/images/brands/unipol.png" },
+  { "name": "Direq", "logo": "assets/images/brands/direq.png" }
+];
 
 const PROJECT_SHARED = {
   refida: {
@@ -47,7 +51,7 @@ const PROJECT_SHARED = {
     ],
     "screens": [],
     "link": "https://refida.eu/",
-    "linkIsMock": false,
+    "hasLiveLink": true,
     "size": "wide"
   },
   rate: {
@@ -62,9 +66,18 @@ const PROJECT_SHARED = {
       { "code": "Aw", "label": "AWS S3" },
       { "slug": "ffmpeg", "hex": "007808", "label": "FFmpeg" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/rate/1.png",
+      "assets/images/projects/rate/2.png",
+      "assets/images/projects/rate/3.jpg",
+      "assets/images/projects/rate/4.jpg",
+      "assets/images/projects/rate/5.jpg",
+      "assets/images/projects/rate/6.jpg",
+      "assets/images/projects/rate/7.jpg",
+      "assets/images/projects/rate/8.jpg"
+    ],
     "link": "https://myrate.me/",
-    "linkIsMock": false,
+    "hasLiveLink": true,
     "size": "wide"
   },
   helperclock: {
@@ -75,9 +88,151 @@ const PROJECT_SHARED = {
       { "slug": "sqlite", "hex": "003B57", "label": "SQLite (sqflite)" },
       { "code": "Nt", "label": "Notifiche locali / Local notifications" }
     ],
+    "screens": [
+      "assets/images/projects/helperclock/1.jpg",
+      "assets/images/projects/helperclock/2.jpg",
+      "assets/images/projects/helperclock/3.jpg",
+      "assets/images/projects/helperclock/4.jpg"
+    ],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "normal"
+  },
+  thera: {
+    "slug": "thera",
+    "tag": "MOBILE / WEB APP — AI Personal Assistant",
+    "stack": [
+      { "slug": "flutter", "hex": "02569B", "label": "Flutter" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "redis", "hex": "FF4438", "label": "Redis" },
+      { "slug": "firebase", "hex": "DD2C00", "label": "Firebase (Auth / Push)" },
+      { "slug": "google", "hex": "4285F4", "label": "Google OAuth / Calendar" },
+      { "code": "An", "label": "Claude API (Anthropic)" }
+    ],
     "screens": [],
-    "link": "mocks/helperclock/index.html",
-    "linkIsMock": true,
+    "link": "",
+    "hasLiveLink": false,
+    "size": "wide"
+  },
+  emailradar: {
+    "slug": "emailradar",
+    "tag": "WEB APP — SaaS / AI Email",
+    "stack": [
+      { "slug": "flutter", "hex": "02569B", "label": "Flutter Web" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "redis", "hex": "FF4438", "label": "Redis" },
+      { "slug": "google", "hex": "4285F4", "label": "Google API (Gmail)" },
+      { "slug": "stripe", "hex": "635BFF", "label": "Stripe" },
+      { "code": "Aw", "label": "AWS S3" },
+      { "code": "AI", "label": "AI email routing (Gemini / Groq)" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "wide"
+  },
+  tactica: {
+    "slug": "tactica",
+    "tag": "WEB APP — Educational Game",
+    "stack": [
+      { "slug": "flutter", "hex": "02569B", "label": "Flutter Web" },
+      { "code": "Gt", "label": "Game theory engine" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "normal"
+  },
+  aoefightsimulator: {
+    "slug": "aoefightsimulator",
+    "tag": "WEB APP — Simulation Tool",
+    "stack": [
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "javascript", "hex": "F7DF1E", "label": "JavaScript (Canvas UI)" },
+      { "code": "Ws", "label": "WebSocket" }
+    ],
+    "screens": [
+      "assets/images/projects/aoefightsimulator/1.png",
+      "assets/images/projects/aoefightsimulator/2.png"
+    ],
+    "link": "https://aoefightsimulator.onrender.com/",
+    "hasLiveLink": true,
+    "size": "normal"
+  },
+  trendr: {
+    "slug": "trendr",
+    "tag": "MOBILE / WEB APP — Social Polling",
+    "stack": [
+      { "slug": "flutter", "hex": "02569B", "label": "Flutter" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "redis", "hex": "FF4438", "label": "Redis" },
+      { "slug": "firebase", "hex": "DD2C00", "label": "Firebase" },
+      { "slug": "stripe", "hex": "635BFF", "label": "Stripe" },
+      { "code": "Aw", "label": "AWS S3" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "wide"
+  },
+  queeup: {
+    "slug": "queeup",
+    "tag": "WEB APP — SaaS / Queue Management",
+    "stack": [
+      { "slug": "angular", "hex": "DD0031", "label": "Angular / PrimeNG" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "redis", "hex": "FF4438", "label": "Redis" },
+      { "slug": "stripe", "hex": "635BFF", "label": "Stripe" },
+      { "code": "Ws", "label": "WebSocket (real-time queue)" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "wide"
+  },
+  sonar: {
+    "slug": "sonar",
+    "tag": "WEB APP — Fintech / Crypto Arbitrage",
+    "stack": [
+      { "slug": "angular", "hex": "DD0031", "label": "Angular" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "redis", "hex": "FF4438", "label": "Redis" },
+      { "code": "Ws", "label": "WebSocket (exchange feeds)" },
+      { "code": "Ti", "label": "Technical indicators engine" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "wide"
+  },
+  signal: {
+    "slug": "signal",
+    "tag": "TOOL — Quant Trading Engine",
+    "stack": [
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js" },
+      { "slug": "supabase", "hex": "3FCF8E", "label": "Supabase" },
+      { "code": "Bt", "label": "Strategy backtesting" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "normal"
+  },
+  mosaicimagepicker: {
+    "slug": "mosaicimagepicker",
+    "tag": "LIBRARY — Flutter Package",
+    "stack": [
+      { "slug": "flutter", "hex": "02569B", "label": "Flutter" },
+      { "code": "Im", "label": "Image / video processing" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
     "size": "normal"
   }
 };
@@ -90,7 +245,7 @@ window.SITE_DATA = {
       "hero": { "ctaWork": "Guarda i lavori", "ctaContact": "Contattami" },
       "brandsLabel": "AZIENDE CON CUI HO LAVORATO",
       "projectsSection": { "eyebrow": "LAVORI SELEZIONATI", "heading": "Progetti", "lead": "Una parte di quello che ho realizzato. Apri una card per la scheda completa, stack e risorse.", "viewDetails": "Vedi dettagli →" },
-      "bringSection": { "eyebrow": "COSA PORTO", "heading": "Cosa so gestire", "engineering": "Ingegneria", "product": "Prodotto & business", "waysOfWorking": "Modo di lavorare" },
+      "bringSection": { "eyebrow": "COSA PORTO", "heading": "Cosa so gestire" },
       "experienceSection": { "eyebrow": "CARRIERA", "heading": "Esperienza" },
       "servicesSection": { "eyebrow": "COSA OFFRO", "heading": "Servizi" },
       "stackSection": { "eyebrow": "STRUMENTI DEL MESTIERE", "heading": "Stack", "primaryTag": "Principale" },
@@ -99,7 +254,7 @@ window.SITE_DATA = {
       "testimonialsSection": { "eyebrow": "PAROLE GENTILI", "heading": "Testimonianze" },
       "contactSection": { "heading": "Parliamone.", "lead": "Aperto a ruoli full-time e a progetti freelance interessanti.", "githubLabel": "GitHub", "cvLabel": "Scarica CV" },
       "footer": { "rights": "Tutti i diritti riservati.", "linkedin": "LinkedIn" },
-      "modal": { "stackHeading": "Stack", "visitSite": "Visita il sito →", "openMock": "Apri demo (mock) →" }
+      "modal": { "stackHeading": "Stack", "visitSite": "Visita il sito →", "show": "Mostra screenshot →" }
     },
 
     "profile": Object.assign({}, PROFILE_SHARED, {
@@ -111,23 +266,26 @@ window.SITE_DATA = {
 
     "experience": [
       { "role": "Sviluppatore Full-stack", "company": "DireQ Srl", "dateStart": "2024", "dateEnd": "Oggi", "description": "Progettazione e sviluppo di un sistema di trading in arbitraggio crypto basato su microservizi, con monitoraggio in tempo reale di più exchange per individuare ed eseguire opportunità di arbitraggio su diversi asset crypto." },
-      { "role": "Sviluppatore front-end", "company": "undicizerouno", "dateStart": "gennaio 2024", "dateEnd": "agosto 2024", "description": "" },
-      { "role": "Sviluppatore Flutter", "company": "Edooko | Building knowledge", "dateStart": "2023", "dateEnd": "2024", "description": "Ho lavorato su front-end, UI/UX e design per la web app e l'app Android." },
-      { "role": "Tecnico di Deployment", "company": "Gruppo Unipol", "dateStart": "agosto 2023", "dateEnd": "dicembre 2023", "description": "Ho lavorato nell'ufficio Deployment, utilizzando la tecnologia WAS (IBM)." },
-      { "role": "Tecnico IT", "company": "PcPratic", "dateStart": "aprile 2022", "dateEnd": "ottobre 2022", "description": "" }
+      { "role": "Sviluppatore front-end", "company": "undicizerouno (succursale Gruppo Unipol)", "dateStart": "gennaio 2024", "dateEnd": "agosto 2024", "description": "Ho lavorato come sviluppatore front-end con JavaScript, oltre a Java e Spring lato back-end, imparando le basi di Java a livello professionale. Ho contribuito allo sviluppo e alla manutenzione dei rami elementari delle assicurazioni Unipol e di diversi processi interni aziendali." },
+      { "role": "Sviluppatore Flutter", "company": "Edooko | Building knowledge", "dateStart": "2023", "dateEnd": "2024", "description": "Ho lavorato come sviluppatore Flutter su front-end, UI/UX e design per la web app e l'app Android di Edooko. Mi sono occupato dell'interfaccia utente e dell'esperienza utente, curando l'aspetto grafico e l'usabilità dell'applicazione, in stretta collaborazione con il team di prodotto per tradurre le esigenze in soluzioni funzionali e coerenti su web e mobile." },
+      { "role": "Tecnico di Deployment", "company": "Gruppo Unipol", "dateStart": "agosto 2023", "dateEnd": "dicembre 2023", "description": "Ho lavorato nell'ufficio Deployment del Gruppo Unipol, occupandomi del rilascio e della gestione delle applicazioni aziendali tramite la tecnologia WAS (WebSphere Application Server) di IBM. Ho supportato i processi di deploy in ambienti di test e produzione, contribuendo al monitoraggio e alla risoluzione delle problematiche legate al rilascio del software, in collaborazione con i team di sviluppo e infrastruttura." },
+      { "role": "Tecnico Sistemista", "company": "PC Pratica", "dateStart": "aprile 2022", "dateEnd": "ottobre 2022", "description": "Mi sono occupato di ripristinare e riparare i computer aziendali, oltre a creare e gestire reti interne (Ethernet, ripetitori Wi-Fi, configurazione DHCP, ecc.). Ho installato sistemi VOIP e centralini telefonici presso diverse aziende clienti, maturando esperienza pratica sull'hardware e lavorando con sistemi NAS e soluzioni di archiviazione, seguendo anche i relativi processi operativi aziendali." }
     ],
 
     "education": [
-      { "degree": "Laurea in Ingegneria Informatica", "school": "Alma Mater Studiorum – Università di Bologna", "dateStart": "2019", "dateEnd": "2024" },
-      { "degree": "BTEC International Level 3 Extended Diploma, Produzione Musicale", "school": "Aloud", "dateStart": "2017", "dateEnd": "2019" },
-      { "degree": "Diploma di Ragioneria", "school": "Luosi - Mirandola", "dateStart": "2012", "dateEnd": "2017" }
+      { "degree": "Laurea in Ingegneria Informatica", "school": "Alma Mater Studiorum – Università di Bologna", "dateStart": "2019", "dateEnd": "2024", "description": "Percorso incentrato su fondamenti di programmazione, algoritmi e strutture dati, basi di dati, reti e ingegneria del software, con progetti pratici in diversi linguaggi e paradigmi." },
+      { "degree": "BTEC International Level 3 Extended Diploma, Produzione Musicale", "school": "Aloud", "dateStart": "2017", "dateEnd": "2019", "description": "Diploma internazionale focalizzato su produzione musicale, registrazione e mixaggio audio, uso di DAW e software di editing, con attenzione anche agli aspetti tecnici e creativi del suono." },
+      { "degree": "Diploma di Ragioneria", "school": "Luosi - Mirandola", "dateStart": "2012", "dateEnd": "2017", "description": "Diploma tecnico-economico con studio di contabilità, economia aziendale, diritto ed elementi di informatica gestionale, che ha posto le basi per un approccio analitico e organizzato al lavoro." }
     ],
 
-    "skills": {
-      "engineering": "Flutter, Angular e Node.js, con solide basi PostgreSQL e un focus centrale sullo sviluppo front-end.",
-      "product": "Background come UI/UX designer e graphic designer, con un occhio orientato al design nel lavoro di prodotto.",
-      "waysOfWorking": "Piena autonomia dall'inizio alla fine, dal design allo sviluppo, attualmente al lavoro su un sistema di arbitraggio crypto a microservizi."
-    },
+    "offerings": [
+      { "icon": "📱", "color": "#22d3ee", "title": "App Mobile", "description": "iOS e Android, native o cross-platform con Flutter." },
+      { "icon": "💻", "color": "#a78bfa", "title": "Web App", "description": "Dashboard, SaaS e siti dinamici: frontend e backend." },
+      { "icon": "🤖", "color": "#4ade80", "title": "AI & ML Integrations", "description": "Integrazione di modelli AI e machine learning nei prodotti." },
+      { "icon": "🧩", "color": "#f97316", "title": "Gestionali ed Automazioni per Aziende", "description": "Software gestionali su misura e automazioni dei processi interni." },
+      { "icon": "🎨", "color": "#f472b6", "title": "UI/UX & Prototipazione", "description": "Wireframe, prototipi Figma e consulenza design." },
+      { "icon": "🚀", "color": "#facc15", "title": "Consulenza End-to-End", "description": "Architettura, sviluppo e deploy in piena autonomia." }
+    ],
 
     "stack": STACK_TECH,
 
@@ -165,6 +323,86 @@ window.SITE_DATA = {
           "Include notifiche locali per ricordare di timbrare l'uscita, così da non perdere traccia delle ore.",
           "Progetto interamente client-side: niente hosting da mantenere, per questo il link qui sotto apre un mock cliccabile invece di un sito live."
         ]
+      }),
+      Object.assign({}, PROJECT_SHARED.thera, {
+        "title": "Thera",
+        "shortDescription": "Assistente personale AI: task, abitudini, persone, stato emotivo e calendario in un'unica chat con memoria a lungo termine.",
+        "description": [
+          "Thera è un assistente personale basato su Claude (Anthropic) pensato come \"secondo cervello\": una chat che tiene traccia di task, progetti, abitudini, persone/relazioni e stato emotivo dell'utente, con notifiche proattive e promemoria calcolati (ricorrenze via rrule, notifiche push).",
+          "Il backend espone moduli dedicati per memoria a lungo termine, tag, quick actions e dashboard riepilogativa; il client Flutter (mobile + web) gestisce autenticazione Google, notifiche locali/push e sync offline-first.",
+          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, app Flutter, integrazione LLM."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.emailradar, {
+        "title": "EmailRadar",
+        "shortDescription": "Piattaforma di email intelligence: instradamento AI della posta, gestione lead/contatti e campagne, con billing integrato.",
+        "description": [
+          "EmailRadar analizza e instrada le email in arrivo con un motore AI (Gemini/Groq) che classifica messaggi, estrae contesto ed li assegna alle code corrette (inbox, review, lead). Include gestione contatti, campagne email e allegati.",
+          "Billing via Stripe con piani a consumo, autenticazione utenti e un client Flutter Web per la dashboard operativa.",
+          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, integrazione modelli AI, frontend Flutter Web."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.tactica, {
+        "title": "Tactica",
+        "shortDescription": "Gioco educativo di strategia basato sulla teoria dei giochi, pensato per bambini 7-10 anni, con 5 modalità di gioco.",
+        "description": [
+          "Tactica è un gioco educativo Flutter Web che insegna concetti di teoria dei giochi e pensiero strategico a bambini tra i 7 e i 10 anni, attraverso 5 modalità di gioco differenti.",
+          "Progetto personale, incentrato su design didattico e UX per un pubblico giovane, interamente client-side."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.aoefightsimulator, {
+        "title": "AoE4 Fight Simulator",
+        "shortDescription": "Simulatore di combattimenti 2D per Age of Empires IV, con strategie configurabili e modalità Monte Carlo.",
+        "description": [
+          "Simulatore di scontri per Age of Empires IV: motore di combattimento 2D semplificato (mischia/distanza, cooldown, ambienti con ostacoli o strutture guarnite) alimentato dai dati reali del gioco (aoe4world/data).",
+          "UI dark con campo di battaglia live, grafici delle risorse in tempo reale e una modalità Monte Carlo per stimare win rate e trade ratio su migliaia di simulazioni.",
+          "Progetto personale nato dalla passione per gli RTS competitivi, backend Node/Express con WebSocket per l'aggiornamento live della simulazione."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.trendr, {
+        "title": "Trendr",
+        "shortDescription": "App di polling sociale in stile swipe: domande di tendenza segmentate per età, genere, settore e interessi.",
+        "description": [
+          "Trendr è un'app social dove gli utenti rispondono con uno swipe a domande/trend, con risultati segmentati per fascia d'età, genere, settore e interessi per esplorare come cambiano le opinioni tra gruppi diversi.",
+          "Backend con localizzazione multi-lingua, gestione di tag/interessi/settori e categorie anagrafiche; app Flutter con swipe card, condivisione risultati e notifiche push.",
+          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, app Flutter, deploy e infrastruttura."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.queeup, {
+        "title": "QueeUp",
+        "shortDescription": "SaaS per la gestione di code virtuali: creazione code in tempo reale, notifiche al cliente e billing integrato.",
+        "description": [
+          "QueeUp permette ad attività commerciali di sostituire la fila fisica con una coda virtuale: i clienti si prenotano, ricevono aggiornamenti in tempo reale via WebSocket sulla propria posizione e vengono notificati quando è il loro turno.",
+          "Dashboard di gestione coda per l'operatore, autenticazione e billing via Stripe per i piani a abbonamento.",
+          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, frontend Angular/PrimeNG."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.sonar, {
+        "title": "Sonar",
+        "shortDescription": "Dashboard di trading in arbitraggio crypto: monitoraggio multi-exchange, gestione ordini e opportunità in tempo reale.",
+        "description": [
+          "Sonar è un sistema di trading che monitora più exchange crypto in tempo reale per individuare opportunità di arbitraggio, con un motore di indicatori tecnici, gestione ordini/coda tramite code Redis e cancellazione ordini cross-exchange.",
+          "Dashboard Angular con viste su bilanci, opportunità, storico, simboli/coppie e configurazione strategie; comunicazione realtime via WebSocket con i worker di backend.",
+          "Progetto personale nel dominio del trading algoritmico, precursore del sistema di arbitraggio crypto sviluppato professionalmente in DireQ Srl."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.signal, {
+        "title": "Signal",
+        "shortDescription": "Motore di generazione segnali e backtesting per strategie di trading algoritmico (breakout, ranging, momentum).",
+        "description": [
+          "Signal è un motore Node.js per lo sviluppo e il backtesting di strategie di trading quantitativo: include diverse strategie (breakout, ranging, random benchmark) e un modulo di backtest con salvataggio dei risultati.",
+          "Dati e stato persistiti su Supabase; pensato come laboratorio personale per validare idee di trading prima di portarle in produzione.",
+          "Progetto personale, solo backend/engine, senza interfaccia grafica."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
+        "title": "Mosaic Image Picker",
+        "shortDescription": "Package Flutter per selezionare foto/video e comporli in layout a mosaico, con ottimizzazione media integrata.",
+        "description": [
+          "Mosaic Image Picker è un package Flutter riutilizzabile per selezionare più immagini/video e disporli in layout a mosaico personalizzabili (drag & drop degli slot), con estrazione EXIF e compressione media integrata.",
+          "Nato per essere condiviso tra più app personali (incluso Rate) che necessitano di un media picker con layout a griglia avanzati.",
+          "Progetto personale, pubblicato come package Flutter standalone con app di esempio."
+        ]
       })
     ],
 
@@ -195,7 +433,7 @@ window.SITE_DATA = {
       "hero": { "ctaWork": "See the work", "ctaContact": "Get in touch" },
       "brandsLabel": "BRANDS I'VE WORKED WITH",
       "projectsSection": { "eyebrow": "SELECTED WORK", "heading": "Projects", "lead": "A slice of what I've shipped. Tap any card for the full write-up, stack, and resources.", "viewDetails": "View details →" },
-      "bringSection": { "eyebrow": "WHAT I BRING", "heading": "What I can own", "engineering": "Engineering", "product": "Product & business", "waysOfWorking": "Ways of working" },
+      "bringSection": { "eyebrow": "WHAT I BRING", "heading": "What I can own" },
       "experienceSection": { "eyebrow": "CAREER", "heading": "Experience" },
       "servicesSection": { "eyebrow": "WHAT I OFFER", "heading": "Services" },
       "stackSection": { "eyebrow": "TOOLS OF THE TRADE", "heading": "Stack", "primaryTag": "Primary" },
@@ -204,7 +442,7 @@ window.SITE_DATA = {
       "testimonialsSection": { "eyebrow": "KIND WORDS", "heading": "Testimonials" },
       "contactSection": { "heading": "Let's talk.", "lead": "Open to full-time roles and interesting freelance work.", "githubLabel": "GitHub", "cvLabel": "Download CV" },
       "footer": { "rights": "All rights reserved.", "linkedin": "LinkedIn" },
-      "modal": { "stackHeading": "Stack", "visitSite": "Visit the site →", "openMock": "Open demo (mock) →" }
+      "modal": { "stackHeading": "Stack", "visitSite": "Visit the site →", "show": "Show screenshots →" }
     },
 
     "profile": Object.assign({}, PROFILE_SHARED, {
@@ -216,23 +454,26 @@ window.SITE_DATA = {
 
     "experience": [
       { "role": "Full-stack Developer", "company": "DireQ Srl", "dateStart": "2024", "dateEnd": "Now", "description": "Designing and developing a microservices-based crypto arbitrage trading system, monitoring multiple exchanges in real-time to identify and execute arbitrage opportunities across a variety of crypto assets." },
-      { "role": "Front-end Developer", "company": "undicizerouno", "dateStart": "January 2024", "dateEnd": "August 2024", "description": "" },
-      { "role": "Flutter Developer", "company": "Edooko | Building knowledge", "dateStart": "2023", "dateEnd": "2024", "description": "Worked on Front End, UI/UX and design for the Web App and Android app." },
-      { "role": "Deployment Technician", "company": "Gruppo Unipol", "dateStart": "August 2023", "dateEnd": "December 2023", "description": "Worked in the Deployment office, using WAS technology (IBM)." },
-      { "role": "IT Technician", "company": "PcPratic", "dateStart": "April 2022", "dateEnd": "October 2022", "description": "" }
+      { "role": "Front-end Developer", "company": "undicizerouno (Gruppo Unipol branch)", "dateStart": "January 2024", "dateEnd": "August 2024", "description": "I worked as a front-end developer with JavaScript, alongside Java and Spring on the back-end, learning the fundamentals of Java in a professional setting. I contributed to the development and maintenance of Unipol's core insurance product lines and several internal company processes." },
+      { "role": "Flutter Developer", "company": "Edooko | Building knowledge", "dateStart": "2023", "dateEnd": "2024", "description": "I worked as a Flutter developer on front-end, UI/UX and design for Edooko's web app and Android app. I handled the user interface and user experience, taking care of the visual design and usability of the application, working closely with the product team to translate requirements into functional, consistent solutions across web and mobile." },
+      { "role": "Deployment Technician", "company": "Gruppo Unipol", "dateStart": "August 2023", "dateEnd": "December 2023", "description": "I worked in Gruppo Unipol's Deployment office, handling the release and management of company applications using IBM's WAS (WebSphere Application Server) technology. I supported deployment processes across test and production environments, helping monitor and troubleshoot release-related issues in collaboration with the development and infrastructure teams." },
+      { "role": "IT Systems Technician", "company": "PC Pratica", "dateStart": "April 2022", "dateEnd": "October 2022", "description": "I handled restoring and repairing company computers, as well as setting up and managing internal networks (Ethernet, Wi-Fi repeaters, DHCP configuration, etc.). I installed VOIP systems and phone switchboards at various client companies, gaining hands-on hardware experience, working with NAS systems and storage solutions, and following related company operational processes." }
     ],
 
     "education": [
-      { "degree": "Bachelor of Engineering, Computer Science", "school": "Alma Mater Studiorum – Università di Bologna", "dateStart": "2019", "dateEnd": "2024" },
-      { "degree": "BTEC International Level 3 Extended Diploma, Music Production", "school": "Aloud", "dateStart": "2017", "dateEnd": "2019" },
-      { "degree": "Higher National Diploma, Accounting", "school": "Luosi - Mirandola", "dateStart": "2012", "dateEnd": "2017" }
+      { "degree": "Bachelor of Engineering, Computer Science", "school": "Alma Mater Studiorum – Università di Bologna", "dateStart": "2019", "dateEnd": "2024", "description": "A program focused on programming fundamentals, algorithms and data structures, databases, networks and software engineering, with hands-on projects across different languages and paradigms." },
+      { "degree": "BTEC International Level 3 Extended Diploma, Music Production", "school": "Aloud", "dateStart": "2017", "dateEnd": "2019", "description": "An international diploma centered on music production, audio recording and mixing, and the use of DAWs and editing software, with a focus on both the technical and creative sides of sound." },
+      { "degree": "Higher National Diploma, Accounting", "school": "Luosi - Mirandola", "dateStart": "2012", "dateEnd": "2017", "description": "A technical-economic diploma covering accounting, business economics, law and elements of business computing, which laid the foundation for an analytical and organized approach to work." }
     ],
 
-    "skills": {
-      "engineering": "Flutter, Angular and Node.js, with solid PostgreSQL foundations and front-end development at the core.",
-      "product": "Background as a UI/UX designer and graphic designer, bringing a design-first eye to product work.",
-      "waysOfWorking": "Full ownership end to end, from design to development, currently building a microservices-based crypto arbitrage system."
-    },
+    "offerings": [
+      { "icon": "📱", "color": "#22d3ee", "title": "Mobile Apps", "description": "iOS and Android, native or cross-platform with Flutter." },
+      { "icon": "💻", "color": "#a78bfa", "title": "Web Apps", "description": "Dashboards, SaaS and dynamic sites: frontend and backend." },
+      { "icon": "🤖", "color": "#4ade80", "title": "AI & ML Integrations", "description": "Integrating AI and machine learning models into products." },
+      { "icon": "🧩", "color": "#f97316", "title": "Business Software & Automation", "description": "Custom management software and internal process automation." },
+      { "icon": "🎨", "color": "#f472b6", "title": "UI/UX & Prototyping", "description": "Wireframes, Figma prototypes and design consulting." },
+      { "icon": "🚀", "color": "#facc15", "title": "End-to-End Consulting", "description": "Architecture, development and deployment, fully autonomous." }
+    ],
 
     "stack": STACK_TECH,
 
@@ -269,6 +510,86 @@ window.SITE_DATA = {
           "HelperClock is a simple personal tool for tracking work hours: clock in/out, automatic calculation of hours worked per day, and a weekly summary. Everything runs offline, no account or server needed — data stays on the device.",
           "Includes local notifications to remind you to clock out, so you never lose track of your hours.",
           "A fully client-side project: no hosting to maintain, which is why the link below opens a clickable mock instead of a live site."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.thera, {
+        "title": "Thera",
+        "shortDescription": "AI personal assistant: tasks, habits, people, emotional state and calendar in one chat with long-term memory.",
+        "description": [
+          "Thera is a personal assistant built on Claude (Anthropic), designed as a \"second brain\": a chat that tracks tasks, projects, habits, people/relationships and emotional state, with proactive notifications and computed reminders (recurrences via rrule, push notifications).",
+          "The backend exposes dedicated modules for long-term memory, tags, quick actions and a summary dashboard; the Flutter client (mobile + web) handles Google auth, local/push notifications and offline-first sync.",
+          "Personal project, built end to end: architecture, Node/Express backend, Flutter app, LLM integration."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.emailradar, {
+        "title": "EmailRadar",
+        "shortDescription": "Email intelligence platform: AI-based email routing, lead/contact and campaign management, with integrated billing.",
+        "description": [
+          "EmailRadar analyzes and routes incoming email with an AI engine (Gemini/Groq) that classifies messages, extracts context and assigns them to the right queues (inbox, review, leads). Includes contact management, email campaigns and attachments.",
+          "Stripe billing with usage-based plans, user authentication and a Flutter Web client for the operational dashboard.",
+          "Personal project, built end to end: architecture, Node/Express backend, AI model integration, Flutter Web frontend."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.tactica, {
+        "title": "Tactica",
+        "shortDescription": "An educational strategy game based on game theory, built for kids aged 7-10, with 5 game modes.",
+        "description": [
+          "Tactica is an educational Flutter Web game that teaches game theory concepts and strategic thinking to children aged 7 to 10, across 5 different game modes.",
+          "Personal project focused on instructional design and UX for a young audience, fully client-side."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.aoefightsimulator, {
+        "title": "AoE4 Fight Simulator",
+        "shortDescription": "A 2D combat simulator for Age of Empires IV, with configurable strategies and a Monte Carlo mode.",
+        "description": [
+          "A combat simulator for Age of Empires IV: a simplified 2D fight engine (melee/ranged, cooldowns, environments with obstacles or garrisoned structures) powered by real in-game data (aoe4world/data).",
+          "Dark UI with a live battlefield, real-time resource charts, and a Monte Carlo mode to estimate win rate and trade ratio across thousands of simulations.",
+          "Personal project born out of a passion for competitive RTS games, Node/Express backend with WebSocket for live simulation updates."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.trendr, {
+        "title": "Trendr",
+        "shortDescription": "A swipe-style social polling app: trending questions segmented by age, gender, sector and interests.",
+        "description": [
+          "Trendr is a social app where users swipe to answer trending questions, with results segmented by age group, gender, sector and interests to explore how opinions differ across groups.",
+          "Backend with multi-language localization, tag/interest/sector management and demographic categories; Flutter app with swipe cards, result sharing and push notifications.",
+          "Personal project, built end to end: architecture, Node/Express backend, Flutter app, deployment and infrastructure."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.queeup, {
+        "title": "QueeUp",
+        "shortDescription": "A SaaS for managing virtual queues: real-time queue creation, customer notifications and integrated billing.",
+        "description": [
+          "QueeUp lets businesses replace a physical line with a virtual queue: customers join remotely, get real-time updates on their position via WebSocket, and are notified when it's their turn.",
+          "A queue management dashboard for the operator, authentication and Stripe billing for subscription plans.",
+          "Personal project, built end to end: architecture, Node/Express backend, Angular/PrimeNG frontend."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.sonar, {
+        "title": "Sonar",
+        "shortDescription": "A crypto arbitrage trading dashboard: multi-exchange monitoring, order management and real-time opportunities.",
+        "description": [
+          "Sonar is a trading system that monitors multiple crypto exchanges in real time to spot arbitrage opportunities, with a technical-indicators engine, order/queue management through Redis queues and cross-exchange order cancellation.",
+          "Angular dashboard with views for balances, opportunities, history, symbols/pairs and strategy configuration; real-time communication via WebSocket with backend workers.",
+          "Personal project in the algorithmic trading space, a precursor to the crypto arbitrage system later built professionally at DireQ Srl."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.signal, {
+        "title": "Signal",
+        "shortDescription": "A signal-generation and backtesting engine for algorithmic trading strategies (breakout, ranging, momentum).",
+        "description": [
+          "Signal is a Node.js engine for developing and backtesting quantitative trading strategies: it includes several strategies (breakout, ranging, random benchmark) and a backtesting module with result persistence.",
+          "Data and state persisted on Supabase; built as a personal lab to validate trading ideas before moving them to production.",
+          "Personal project, backend/engine only, no graphical interface."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
+        "title": "Mosaic Image Picker",
+        "shortDescription": "A Flutter package for picking photos/videos and arranging them into mosaic layouts, with built-in media optimization.",
+        "description": [
+          "Mosaic Image Picker is a reusable Flutter package for selecting multiple images/videos and arranging them into customizable mosaic layouts (drag & drop slots), with EXIF extraction and built-in media compression.",
+          "Built to be shared across several personal apps (including Rate) that need a media picker with advanced grid layouts.",
+          "Personal project, published as a standalone Flutter package with an example app."
         ]
       })
     ],

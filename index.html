@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuele Carpani — Full Stack Developer</title>
+<title>Samuele Carpani</title>
 <meta name="description" content="Full stack products, end to end. Portfolio di Samuele Carpani, Full Stack Developer.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237c5cf0'/%3E%3Cstop offset='100%25' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='34' height='34' rx='9' fill='url(%23g)'/%3E%3Ctext x='17' y='23' font-family='Arial, sans-serif' font-size='14' font-weight='800' fill='%230a0710' text-anchor='middle'%3ESC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
   <div class="container header-inner">
     <a href="#top" class="logo" data-field="logo"></a>
     <nav class="main-nav">
-      <a href="#services" data-field="navServices"></a>
+      <!-- <a href="#services" data-field="navServices"></a> -->
       <a href="#projects" data-field="navProjects"></a>
       <a href="#skills" data-field="navSkills"></a>
       <a href="#experience" data-field="navExperience"></a>
@@ -58,6 +59,8 @@
     <div class="brands">
       <div class="container">
         <p class="brands-label" data-field="brandsLabel"></p>
+      </div>
+      <div class="brands-marquee">
         <ul class="brands-list" data-field="brands"></ul>
       </div>
     </div>
@@ -80,23 +83,7 @@
       <p class="eyebrow" data-field="bringEyebrow"></p>
       <h2 data-field="bringHeading"></h2>
 
-      <div class="bring-grid">
-        <div class="bring-card">
-          <div class="bring-icon">{ }</div>
-          <h3 data-field="bringEngineering"></h3>
-          <p data-field="skillsEngineering"></p>
-        </div>
-        <div class="bring-card">
-          <div class="bring-icon">$</div>
-          <h3 data-field="bringProduct"></h3>
-          <p data-field="skillsProduct"></p>
-        </div>
-        <div class="bring-card">
-          <div class="bring-icon">→</div>
-          <h3 data-field="bringWaysOfWorking"></h3>
-          <p data-field="skillsWaysOfWorking"></p>
-        </div>
-      </div>
+      <div class="offerings-grid" data-field="offerings"></div>
     </div>
   </section>
 
@@ -110,7 +97,7 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES (nascosta per ora)
   <section id="services" class="section section-muted">
     <div class="container">
       <p class="eyebrow" data-field="servicesEyebrow"></p>
@@ -119,6 +106,7 @@
       <div class="service-grid" data-field="services"></div>
     </div>
   </section>
+  -->
 
   <!-- STACK -->
   <section class="section">
@@ -152,7 +140,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS (nascosta per ora)
   <section class="section section-muted">
     <div class="container">
       <p class="eyebrow" data-field="testimonialsEyebrow"></p>
@@ -161,6 +149,7 @@
       <div class="testimonial-grid" data-field="testimonials"></div>
     </div>
   </section>
+  -->
 
   <!-- CONTACT / CTA -->
   <section id="contact" class="section cta-section">
@@ -190,8 +179,6 @@
       <p class="modal-desc" data-field="modalShortDescription"></p>
       <div class="modal-actions" data-field="modalActions"></div>
 
-      <div class="modal-screens" data-field="modalScreens"></div>
-
       <div class="modal-body" data-field="modalDescription"></div>
 
       <div data-section="modalStack">
@@ -200,6 +187,19 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- SCREENSHOT CAROUSEL -->
+<div class="carousel-overlay" id="screenCarousel" aria-hidden="true">
+  <button class="modal-close carousel-close" id="carouselClose" aria-label="Chiudi">&times;</button>
+  <div class="carousel-dialog">
+    <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Precedente">&#8249;</button>
+    <div class="carousel-viewport">
+      <img id="carouselImage" src="" alt="">
+    </div>
+    <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Successivo">&#8250;</button>
+  </div>
+  <p class="carousel-counter" id="carouselCounter"></p>
 </div>
 
 <script src="assets/data.js"></script>

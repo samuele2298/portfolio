@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupNavToggle();
   setupLangSwitch();
+  setupCarousel();
 
   currentLang = getStoredLang();
   renderAll(currentLang);
@@ -69,6 +70,12 @@ function closeModalIfOpen() {
     overlay.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
   }
+  const carousel = document.getElementById('screenCarousel');
+  if (carousel && carousel.classList.contains('open')) {
+    carousel.classList.remove('open');
+    carousel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
 }
 
 function renderAll(lang) {
@@ -110,9 +117,6 @@ function renderUI(ui) {
 
   setText('bringEyebrow', ui.bringSection.eyebrow);
   setText('bringHeading', ui.bringSection.heading);
-  setText('bringEngineering', ui.bringSection.engineering);
-  setText('bringProduct', ui.bringSection.product);
-  setText('bringWaysOfWorking', ui.bringSection.waysOfWorking);
 
   setText('experienceEyebrow', ui.experienceSection.eyebrow);
   setText('experienceHeading', ui.experienceSection.heading);
@@ -145,7 +149,7 @@ function renderSite(data) {
   renderProfile(data.profile);
   renderBrands(data.brands);
   renderProjects(data.projects, (data.ui && data.ui.projectsSection && data.ui.projectsSection.viewDetails) || 'View details →');
-  renderSkills(data.skills);
+  renderOfferings(data.offerings);
   renderExperience(data.experience);
   renderServices(data.services);
   renderStack(data.stack, (data.ui && data.ui.stackSection && data.ui.stackSection.primaryTag) || 'Primary');
@@ -157,15 +161,11 @@ function renderSite(data) {
   renderFooter(data.profile);
 }
 
-function initials(name) {
-  return name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
-}
-
 function renderProfile(profile) {
   if (!profile) return;
 
   const logoEl = document.querySelector('[data-field="logo"]');
-  if (logoEl) logoEl.innerHTML = `${initials(profile.name)} <span>${profile.name}</span>`;
+  if (logoEl) logoEl.innerHTML = `<span>${profile.name}</span>`;
 
   const roleEl = document.querySelector('[data-field="role"]');
   if (roleEl) roleEl.textContent = (profile.role || '').toUpperCase();
@@ -194,7 +194,12 @@ function renderProfile(profile) {
 function renderBrands(brands) {
   const el = document.querySelector('[data-field="brands"]');
   if (!el || !brands) return;
-  el.innerHTML = brands.map((b) => `<li>${b}</li>`).join('');
+  const item = (b, hidden) =>
+    b.logo
+      ? `<li${hidden ? ' aria-hidden="true"' : ''}><img src="${b.logo}" alt="${hidden ? '' : b.name}" loading="lazy"></li>`
+      : `<li${hidden ? ' aria-hidden="true"' : ''}>${b.name}</li>`;
+  // La lista viene duplicata per ottenere uno scroll infinito senza scatti (vedi .brands-marquee animation)
+  el.innerHTML = brands.map((b) => item(b, false)).join('') + brands.map((b) => item(b, true)).join('');
 }
 
 const PROJECT_ICONS = {
@@ -242,17 +247,19 @@ function setupModal(projects, modalUI, primaryTagLabel) {
     document.querySelector('[data-field="modalShortDescription"]').textContent = project.shortDescription || '';
 
     const actionsEl = document.querySelector('[data-field="modalActions"]');
-    if (project.link) {
-      const label = project.linkIsMock ? (modalUI.openMock || 'Open demo (mock) →') : (modalUI.visitSite || 'Visit the site →');
-      actionsEl.innerHTML = `<a href="${project.link}" target="_blank" rel="noopener" class="btn btn-primary">${label}</a>`;
-    } else {
-      actionsEl.innerHTML = '';
+    const hasScreens = (project.screens || []).length > 0;
+    const buttons = [];
+    if (project.hasLiveLink && project.link) {
+      buttons.push(`<a href="${project.link}" target="_blank" rel="noopener" class="btn btn-primary">${modalUI.visitSite || 'Visit the site →'}</a>`);
     }
-
-    const screensEl = document.querySelector('[data-field="modalScreens"]');
-    const screens = project.screens || [];
-    screensEl.style.display = screens.length ? '' : 'none';
-    screensEl.innerHTML = screens.map((src) => `<img src="${src}" alt="${project.title} screenshot">`).join('');
+    if (hasScreens) {
+      const btnClass = project.hasLiveLink && project.link ? 'btn btn-ghost' : 'btn btn-primary';
+      buttons.push(`<button type="button" class="${btnClass}" data-open-carousel>${modalUI.show || 'Show →'}</button>`);
+    }
+    actionsEl.innerHTML = buttons.join('');
+    if (hasScreens) {
+      actionsEl.querySelector('[data-open-carousel]').addEventListener('click', () => openCarousel(project.screens, project.title));
+    }
 
     const descEl = document.querySelector('[data-field="modalDescription"]');
     const paragraphs = Array.isArray(project.description) ? project.description : [project.description];
@@ -287,14 +294,78 @@ function setupModal(projects, modalUI, primaryTagLabel) {
   });
 }
 
-function renderSkills(skills) {
-  if (!skills) return;
-  const eng = document.querySelector('[data-field="skillsEngineering"]');
-  const prod = document.querySelector('[data-field="skillsProduct"]');
-  const ways = document.querySelector('[data-field="skillsWaysOfWorking"]');
-  if (eng) eng.textContent = skills.engineering || '';
-  if (prod) prod.textContent = skills.product || '';
-  if (ways) ways.textContent = skills.waysOfWorking || '';
+let carouselScreens = [];
+let carouselIndex = 0;
+
+function openCarousel(screens, title) {
+  carouselScreens = screens || [];
+  carouselIndex = 0;
+  if (!carouselScreens.length) return;
+
+  const overlay = document.getElementById('screenCarousel');
+  const img = document.getElementById('carouselImage');
+  img.alt = title || '';
+  showCarouselSlide();
+
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeCarousel() {
+  const overlay = document.getElementById('screenCarousel');
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+function showCarouselSlide() {
+  const img = document.getElementById('carouselImage');
+  const counter = document.getElementById('carouselCounter');
+  img.src = carouselScreens[carouselIndex];
+  counter.textContent = `${carouselIndex + 1} / ${carouselScreens.length}`;
+}
+
+function carouselStep(delta) {
+  if (!carouselScreens.length) return;
+  carouselIndex = (carouselIndex + delta + carouselScreens.length) % carouselScreens.length;
+  showCarouselSlide();
+}
+
+function setupCarousel() {
+  const overlay = document.getElementById('screenCarousel');
+  const closeBtn = document.getElementById('carouselClose');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  if (!overlay) return;
+
+  closeBtn.addEventListener('click', closeCarousel);
+  prevBtn.addEventListener('click', () => carouselStep(-1));
+  nextBtn.addEventListener('click', () => carouselStep(1));
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeCarousel();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeCarousel();
+    if (e.key === 'ArrowLeft') carouselStep(-1);
+    if (e.key === 'ArrowRight') carouselStep(1);
+  });
+}
+
+function renderOfferings(offerings) {
+  const el = document.querySelector('[data-field="offerings"]');
+  if (!el || !offerings) return;
+  el.innerHTML = offerings
+    .map(
+      (o) => `
+      <div class="offering-card" style="--offering-color: ${o.color}; --offering-color-soft: ${o.color}26;">
+        <div class="offering-icon">${o.icon}</div>
+        <h3>${o.title}</h3>
+        <p>${o.description || ''}</p>
+      </div>`
+    )
+    .join('');
 }
 
 function renderExperience(experience) {
@@ -352,6 +423,7 @@ function renderEducation(education) {
         <div>
           <h3>${e.degree}</h3>
           <p>${e.school}</p>
+          <p class="education-description">${e.description || ''}</p>
         </div>
         <p class="education-date">${e.dateStart} — ${e.dateEnd}</p>
       </li>`
