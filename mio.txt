@@ -3,15 +3,7 @@ linkedin: https://www.linkedin.com/in/samuelecarpani/?locale=en
 
 
 FIX:
-    usa questa immagine profilo :
-        -> /home/sam/Downloads/1775380062088.jpeg
-
-
-    prendi i dati per experience, eduction skill, ecc.. da linkedin
-        -> https://www.linkedin.com/in/samuelecarpani/?locale=en
-
-        questi salvaili in un JSON pratico che possa modifcare in autonomia
-
+ 
     --
 
     brand con cui ho lavorato mettere log nel banner (

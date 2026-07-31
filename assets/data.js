@@ -49,7 +49,12 @@ const PROJECT_SHARED = {
       { "code": "Aw", "label": "AWS S3" },
       { "slug": "jsonwebtokens", "hex": "000000", "label": "JWT / 2FA" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/refida/1.png",
+      "assets/images/projects/refida/2.png",
+      "assets/images/projects/refida/3.png",
+      "assets/images/projects/refida/4.png"
+    ],
     "link": "https://refida.eu/",
     "hasLiveLink": true,
     "size": "wide"
@@ -110,7 +115,19 @@ const PROJECT_SHARED = {
       { "slug": "google", "hex": "4285F4", "label": "Google OAuth / Calendar" },
       { "code": "An", "label": "Claude API (Anthropic)" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/thera/1.jpg",
+      "assets/images/projects/thera/2.jpg",
+      "assets/images/projects/thera/3.jpg",
+      "assets/images/projects/thera/4.jpg",
+      "assets/images/projects/thera/5.jpg",
+      "assets/images/projects/thera/6.jpg",
+      "assets/images/projects/thera/7.jpg",
+      "assets/images/projects/thera/8.jpg",
+      "assets/images/projects/thera/9.jpg",
+      "assets/images/projects/thera/10.jpg",
+      "assets/images/projects/thera/11.jpg"
+    ],
     "link": "",
     "hasLiveLink": false,
     "size": "wide"
@@ -128,7 +145,17 @@ const PROJECT_SHARED = {
       { "code": "Aw", "label": "AWS S3" },
       { "code": "AI", "label": "AI email routing (Gemini / Groq)" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/emailradar/1.png",
+      "assets/images/projects/emailradar/2.png",
+      "assets/images/projects/emailradar/3.png",
+      "assets/images/projects/emailradar/4.png",
+      "assets/images/projects/emailradar/5.png",
+      "assets/images/projects/emailradar/6.png",
+      "assets/images/projects/emailradar/7.png",
+      "assets/images/projects/emailradar/8.png",
+      "assets/images/projects/emailradar/9.png"
+    ],
     "link": "",
     "hasLiveLink": false,
     "size": "wide"
@@ -140,7 +167,14 @@ const PROJECT_SHARED = {
       { "slug": "flutter", "hex": "02569B", "label": "Flutter Web" },
       { "code": "Gt", "label": "Game theory engine" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/tactica/1.png",
+      "assets/images/projects/tactica/2.png",
+      "assets/images/projects/tactica/3.png",
+      "assets/images/projects/tactica/4.png",
+      "assets/images/projects/tactica/5.png",
+      "assets/images/projects/tactica/6.png"
+    ],
     "link": "",
     "hasLiveLink": false,
     "size": "normal"
@@ -189,7 +223,11 @@ const PROJECT_SHARED = {
       { "slug": "stripe", "hex": "635BFF", "label": "Stripe" },
       { "code": "Ws", "label": "WebSocket (real-time queue)" }
     ],
-    "screens": [],
+    "screens": [
+      "assets/images/projects/queeup/1.png",
+      "assets/images/projects/queeup/2.png",
+      "assets/images/projects/queeup/3.png"
+    ],
     "link": "",
     "hasLiveLink": false,
     "size": "wide"
@@ -217,6 +255,22 @@ const PROJECT_SHARED = {
       { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js" },
       { "slug": "supabase", "hex": "3FCF8E", "label": "Supabase" },
       { "code": "Bt", "label": "Strategy backtesting" }
+    ],
+    "screens": [],
+    "link": "",
+    "hasLiveLink": false,
+    "size": "normal"
+  },
+  leadsniper: {
+    "slug": "leadsniper",
+    "tag": "WEB APP — SaaS / Lead Generation",
+    "stack": [
+      { "slug": "angular", "hex": "DD0031", "label": "Angular / PrimeNG" },
+      { "slug": "nodedotjs", "hex": "5FA04E", "label": "Node.js / Express" },
+      { "slug": "postgresql", "hex": "4169E1", "label": "PostgreSQL" },
+      { "slug": "stripe", "hex": "635BFF", "label": "Stripe" },
+      { "code": "Re", "label": "Reddit API" },
+      { "code": "Au", "label": "Passport / Auth" }
     ],
     "screens": [],
     "link": "",
@@ -393,6 +447,15 @@ window.SITE_DATA = {
           "Signal è un motore Node.js per lo sviluppo e il backtesting di strategie di trading quantitativo: include diverse strategie (breakout, ranging, random benchmark) e un modulo di backtest con salvataggio dei risultati.",
           "Dati e stato persistiti su Supabase; pensato come laboratorio personale per validare idee di trading prima di portarle in produzione.",
           "Progetto personale, solo backend/engine, senza interfaccia grafica."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.leadsniper, {
+        "title": "LeadSniper",
+        "shortDescription": "SaaS per la ricerca di lead su Reddit: screening per keyword/subreddit, storico ricerche e billing integrato.",
+        "description": [
+          "LeadSniper è uno strumento di lead generation che analizza Reddit alla ricerca di post e commenti rilevanti per un set di keyword e subreddit scelti dall'utente, restituendo una lista di potenziali lead.",
+          "Storico delle ricerche (screening) salvato per utente, autenticazione con Passport e billing via Stripe per i piani a abbonamento.",
+          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, frontend Angular/PrimeNG."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
@@ -581,6 +644,15 @@ window.SITE_DATA = {
           "Signal is a Node.js engine for developing and backtesting quantitative trading strategies: it includes several strategies (breakout, ranging, random benchmark) and a backtesting module with result persistence.",
           "Data and state persisted on Supabase; built as a personal lab to validate trading ideas before moving them to production.",
           "Personal project, backend/engine only, no graphical interface."
+        ]
+      }),
+      Object.assign({}, PROJECT_SHARED.leadsniper, {
+        "title": "LeadSniper",
+        "shortDescription": "A SaaS for finding leads on Reddit: keyword/subreddit screening, search history and integrated billing.",
+        "description": [
+          "LeadSniper is a lead generation tool that scans Reddit for posts and comments matching a set of keywords and subreddits chosen by the user, returning a list of potential leads.",
+          "Per-user search (screening) history, Passport-based authentication and Stripe billing for subscription plans.",
+          "Personal project, built end to end: architecture, Node/Express backend, Angular/PrimeNG frontend."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
