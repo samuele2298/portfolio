@@ -1,4 +1,14 @@
 let currentLang = 'it';
+const PROJECTS_INITIAL_VISIBLE = 6;
+const PROJECTS_STEP = 6;
+
+let currentProjects = [];
+let currentVisibleProjects = PROJECTS_INITIAL_VISIBLE;
+let currentViewDetailsLabel = 'View details →';
+let currentModalUI = {};
+let currentPrimaryTagLabel = 'Primary';
+let modalWired = false;
+let projectControlsWired = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
@@ -7,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNavToggle();
   setupLangSwitch();
   setupCarousel();
+  setupProjectControls();
 
   currentLang = getStoredLang();
   renderAll(currentLang);
@@ -146,13 +157,19 @@ function renderUI(ui) {
 }
 
 function renderSite(data) {
+  currentProjects = data.projects || [];
+  currentVisibleProjects = Math.min(PROJECTS_INITIAL_VISIBLE, currentProjects.length);
+  currentViewDetailsLabel = (data.ui && data.ui.projectsSection && data.ui.projectsSection.viewDetails) || 'View details →';
+  currentModalUI = (data.ui && data.ui.modal) || {};
+  currentPrimaryTagLabel = (data.ui && data.ui.stackSection && data.ui.stackSection.primaryTag) || 'Primary';
+
   renderProfile(data.profile);
   renderBrands(data.brands);
-  renderProjects(data.projects, (data.ui && data.ui.projectsSection && data.ui.projectsSection.viewDetails) || 'View details →');
+  renderProjects(currentProjects, currentViewDetailsLabel, currentVisibleProjects);
   renderOfferings(data.offerings);
   renderExperience(data.experience);
   renderServices(data.services);
-  renderStack(data.stack, (data.ui && data.ui.stackSection && data.ui.stackSection.primaryTag) || 'Primary');
+  renderStack(data.stack, currentPrimaryTagLabel);
   renderEducation(data.education);
   renderHobbies(data.hobbies);
   renderHighlights(data.highlights);
@@ -215,10 +232,28 @@ function projectIcon(tag) {
   return PROJECT_ICONS[key] || '🔧';
 }
 
-function renderProjects(projects, viewDetailsLabel) {
+function getProjectsLoadMoreLabel(remaining) {
+  if (currentLang === 'it') {
+    return `Carica altri ${remaining} ${remaining === 1 ? 'progetto' : 'progetti'}`;
+  }
+  return `Load ${remaining} more ${remaining === 1 ? 'project' : 'projects'}`;
+}
+
+function updateProjectsLoadMoreButton(projects, visibleCount) {
+  const wrapEl = document.querySelector('[data-field="projectsLoadMoreWrap"]');
+  const buttonEl = document.querySelector('[data-field="projectsLoadMore"]');
+  if (!wrapEl || !buttonEl || !projects) return;
+
+  const remaining = Math.max(projects.length - visibleCount, 0);
+  wrapEl.hidden = remaining === 0;
+  buttonEl.textContent = getProjectsLoadMoreLabel(remaining);
+}
+
+function renderProjects(projects, viewDetailsLabel, visibleCount = projects ? projects.length : 0) {
   const el = document.querySelector('[data-field="projects"]');
   if (!el || !projects) return;
-  el.innerHTML = projects
+  const visibleProjects = projects.slice(0, visibleCount);
+  el.innerHTML = visibleProjects
     .map((p, i) => {
       const wideClass = p.size === 'wide' ? ' project-card--wide' : '';
       const thumb = p.screens && p.screens[0]
@@ -234,64 +269,94 @@ function renderProjects(projects, viewDetailsLabel) {
         </article>`;
     })
     .join('');
+
+  updateProjectsLoadMoreButton(projects, visibleCount);
+}
+
+function openProjectModal(project) {
+  if (!project) return;
+
+  document.querySelector('[data-field="modalTag"]').textContent = project.tag || '';
+  document.querySelector('[data-field="modalTitle"]').textContent = project.title || '';
+  document.querySelector('[data-field="modalShortDescription"]').textContent = project.shortDescription || '';
+
+  const actionsEl = document.querySelector('[data-field="modalActions"]');
+  const hasScreens = (project.screens || []).length > 0;
+  const buttons = [];
+  if (project.hasLiveLink && project.link) {
+    buttons.push(`<a href="${project.link}" target="_blank" rel="noopener" class="btn btn-primary">${currentModalUI.visitSite || 'Visit the site →'}</a>`);
+  }
+  if (hasScreens) {
+    const btnClass = project.hasLiveLink && project.link ? 'btn btn-ghost' : 'btn btn-primary';
+    buttons.push(`<button type="button" class="${btnClass}" data-open-carousel>${currentModalUI.show || 'Show →'}</button>`);
+  }
+  actionsEl.innerHTML = buttons.join('');
+  if (hasScreens) {
+    actionsEl.querySelector('[data-open-carousel]').addEventListener('click', () => openCarousel(project.screens, project.title));
+  }
+
+  const descEl = document.querySelector('[data-field="modalDescription"]');
+  const paragraphs = Array.isArray(project.description) ? project.description : [project.description];
+  descEl.innerHTML = paragraphs.filter(Boolean).map((p) => `<p>${p}</p>`).join('');
+
+  const stackSection = document.querySelector('[data-section="modalStack"]');
+  const stackEl = document.querySelector('[data-field="modalStack"]');
+  const stack = project.stack || [];
+  stackSection.style.display = stack.length ? '' : 'none';
+  stackEl.innerHTML = stack.map((s) => stackItemHTML(s, currentPrimaryTagLabel)).join('');
+
+  const overlay = document.getElementById('projectModal');
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function setupProjectControls() {
+  if (projectControlsWired) return;
+
+  const grid = document.querySelector('[data-field="projects"]');
+  if (grid) {
+    grid.addEventListener('click', (e) => {
+      const button = e.target.closest('[data-open-project]');
+      if (!button) return;
+      const projectIndex = Number(button.dataset.openProject);
+      const project = currentProjects[projectIndex];
+      if (project) openProjectModal(project);
+    });
+  }
+
+  const loadMoreBtn = document.querySelector('[data-field="projectsLoadMore"]');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      currentVisibleProjects = Math.min(currentVisibleProjects + PROJECTS_STEP, currentProjects.length);
+      renderProjects(currentProjects, currentViewDetailsLabel, currentVisibleProjects);
+    });
+  }
+
+  projectControlsWired = true;
 }
 
 function setupModal(projects, modalUI, primaryTagLabel) {
+  currentProjects = projects || [];
+  currentModalUI = modalUI || {};
+  currentPrimaryTagLabel = primaryTagLabel || 'Primary';
+
   const overlay = document.getElementById('projectModal');
   const closeBtn = document.getElementById('modalClose');
   if (!overlay) return;
 
-  const openModal = (project) => {
-    document.querySelector('[data-field="modalTag"]').textContent = project.tag || '';
-    document.querySelector('[data-field="modalTitle"]').textContent = project.title || '';
-    document.querySelector('[data-field="modalShortDescription"]').textContent = project.shortDescription || '';
-
-    const actionsEl = document.querySelector('[data-field="modalActions"]');
-    const hasScreens = (project.screens || []).length > 0;
-    const buttons = [];
-    if (project.hasLiveLink && project.link) {
-      buttons.push(`<a href="${project.link}" target="_blank" rel="noopener" class="btn btn-primary">${modalUI.visitSite || 'Visit the site →'}</a>`);
-    }
-    if (hasScreens) {
-      const btnClass = project.hasLiveLink && project.link ? 'btn btn-ghost' : 'btn btn-primary';
-      buttons.push(`<button type="button" class="${btnClass}" data-open-carousel>${modalUI.show || 'Show →'}</button>`);
-    }
-    actionsEl.innerHTML = buttons.join('');
-    if (hasScreens) {
-      actionsEl.querySelector('[data-open-carousel]').addEventListener('click', () => openCarousel(project.screens, project.title));
-    }
-
-    const descEl = document.querySelector('[data-field="modalDescription"]');
-    const paragraphs = Array.isArray(project.description) ? project.description : [project.description];
-    descEl.innerHTML = paragraphs.filter(Boolean).map((p) => `<p>${p}</p>`).join('');
-
-    const stackSection = document.querySelector('[data-section="modalStack"]');
-    const stackEl = document.querySelector('[data-field="modalStack"]');
-    const stack = project.stack || [];
-    stackSection.style.display = stack.length ? '' : 'none';
-    stackEl.innerHTML = stack.map((s) => stackItemHTML(s, primaryTagLabel)).join('');
-
-    overlay.classList.add('open');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-  };
-
   const closeModal = () => closeModalIfOpen();
 
-  document.querySelectorAll('[data-open-project]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const project = projects[Number(btn.dataset.openProject)];
-      if (project) openModal(project);
+  if (!modalWired) {
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
     });
-  });
-
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
-  });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+    modalWired = true;
+  }
 }
 
 let carouselScreens = [];

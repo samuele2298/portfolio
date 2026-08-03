@@ -456,6 +456,16 @@ section h2 {
 }
 .project-link:hover { text-decoration: underline; }
 
+.projects-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.projects-load-more {
+  min-width: min(100%, 280px);
+}
+
 /* ===== What I bring ===== */
 .offerings-grid {
   display: grid;
