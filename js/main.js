@@ -115,6 +115,7 @@ function renderUI(ui) {
   setText('navExperience', ui.nav.experience);
   setText('navFormation', ui.nav.formation);
   setText('navHobbies', ui.nav.hobbies);
+  setText('navAi', ui.nav.ai);
   setText('navContact', ui.nav.contact);
 
   setText('heroCtaWork', ui.hero.ctaWork);
@@ -131,6 +132,12 @@ function renderUI(ui) {
 
   setText('experienceEyebrow', ui.experienceSection.eyebrow);
   setText('experienceHeading', ui.experienceSection.heading);
+
+  if (ui.aiSection) {
+    setText('aiEyebrow', ui.aiSection.eyebrow);
+    setText('aiHeading', ui.aiSection.heading);
+    setText('aiLead', ui.aiSection.lead);
+  }
 
   setText('servicesEyebrow', ui.servicesSection.eyebrow);
   setText('servicesHeading', ui.servicesSection.heading);
@@ -168,6 +175,7 @@ function renderSite(data) {
   renderProjects(currentProjects, currentViewDetailsLabel, currentVisibleProjects);
   renderOfferings(data.offerings);
   renderExperience(data.experience);
+  renderAiTools(data.aiTools);
   renderServices(data.services);
   renderStack(data.stack, currentPrimaryTagLabel);
   renderEducation(data.education);
@@ -445,6 +453,21 @@ function renderExperience(experience) {
         <p class="timeline-org">${e.company}</p>
         <p>${e.description || ''}</p>
       </li>`
+    )
+    .join('');
+}
+
+function renderAiTools(tools) {
+  const el = document.querySelector('[data-field="aiTools"]');
+  if (!el || !tools) return;
+  el.innerHTML = tools
+    .map(
+      (t) => `
+      <div class="hobby-card ai-card">
+        <span class="hobby-badge">${t.code}</span>
+        <h3>${t.title}</h3>
+        <p>${t.description || ''}</p>
+      </div>`
     )
     .join('');
 }

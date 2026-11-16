@@ -679,6 +679,14 @@ section h2 {
 .hobby-card h3 { font-size: 1rem; margin-bottom: 4px; }
 .hobby-card p { color: var(--text-dim); font-size: 0.88rem; }
 
+.ai-lead { max-width: 720px; }
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -791,6 +799,7 @@ section h2 {
   .offerings-grid { grid-template-columns: repeat(2, 1fr); }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .hobby-grid { grid-template-columns: repeat(2, 1fr); }
+  .ai-grid { grid-template-columns: repeat(2, 1fr); }
   .highlight-grid { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
 }
@@ -803,6 +812,7 @@ section h2 {
   .offerings-grid { grid-template-columns: 1fr; }
   .service-grid { grid-template-columns: 1fr; }
   .hobby-grid { grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; }
   .brands-list { gap: 24px; font-size: 0.95rem; }
   .section { padding: 64px 0; }
 }

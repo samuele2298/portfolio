@@ -299,12 +299,13 @@ window.SITE_DATA = {
 
   it: {
     "ui": {
-      "nav": { "services": "Servizi", "projects": "Progetti", "skills": "Competenze", "experience": "Esperienza", "formation": "Formazione", "hobbies": "Hobby", "contact": "Contatti" },
+      "nav": { "services": "Servizi", "projects": "Progetti", "skills": "Competenze", "experience": "Esperienza", "formation": "Formazione", "hobbies": "Hobby", "ai": "AI", "contact": "Contatti" },
       "hero": { "ctaWork": "Guarda i lavori", "ctaContact": "Contattami" },
       "brandsLabel": "AZIENDE CON CUI HO LAVORATO",
       "projectsSection": { "eyebrow": "LAVORI SELEZIONATI", "heading": "Progetti", "lead": "Una parte di quello che ho realizzato. Apri una card per la scheda completa, stack e risorse.", "viewDetails": "Vedi dettagli →" },
       "bringSection": { "eyebrow": "COSA PORTO", "heading": "Cosa so gestire" },
       "experienceSection": { "eyebrow": "CARRIERA", "heading": "Esperienza" },
+      "aiSection": { "eyebrow": "SVILUPPO CON L'AI", "heading": "Workflow AI-first", "lead": "Negli ultimi mesi mi sono dedicato ad approfondire e ridisegnare il mio workflow di sviluppo attorno all'AI, con Claude al centro. Continuo a studiare e a tenermi aggiornato sulle novità del settore, portando ogni nuovo strumento direttamente sui progetti reali." },
       "servicesSection": { "eyebrow": "COSA OFFRO", "heading": "Servizi" },
       "stackSection": { "eyebrow": "STRUMENTI DEL MESTIERE", "heading": "Stack", "primaryTag": "Principale" },
       "educationSection": { "eyebrow": "FORMAZIONE", "heading": "Formazione" },
@@ -329,6 +330,15 @@ window.SITE_DATA = {
       {"role": "Tecnico di Deployment", "company": "Gruppo Unipol", "dateStart": "agosto 2023", "dateEnd": "dicembre 2023", "description": "Rilascio e troubleshooting delle applicazioni aziendali Angular e Java/Spring su IBM WebSphere, insieme ai team di sviluppo e infrastruttura."},
       {"role": "Sviluppatore front-end", "company": "Edooko | Building knowledge", "dateStart": "gennaio 2023", "dateEnd": "giugno 2024", "description": "Ho lavorato come sviluppatore front-end in Flutter su UI/UX e design per la web app e l'app Android di Edooko, integrando il front-end con il back-end Node.js e MongoDB. Mi sono occupato dell'interfaccia utente e dell'esperienza utente, curando l'aspetto grafico e l'usabilità dell'applicazione, in stretta collaborazione con il team di prodotto per tradurre le esigenze in soluzioni funzionali e coerenti su web e mobile."},
       { "role": "Tecnico Sistemista", "company": "PC Pratica", "dateStart": "aprile 2022", "dateEnd": "ottobre 2022", "description": "Mi sono occupato di ripristinare e riparare i computer aziendali, oltre a creare e gestire reti interne (Ethernet, ripetitori Wi-Fi, configurazione DHCP, ecc.). Ho installato sistemi VOIP e centralini telefonici presso diverse aziende clienti, maturando esperienza pratica sull'hardware e lavorando con sistemi NAS e soluzioni di archiviazione, seguendo anche i relativi processi operativi aziendali." }
+    ],
+
+    "aiTools": [
+      { "code": "Cc", "title": "Claude Code", "description": "Agentic coding nel lavoro di tutti i giorni: feature end to end, refactoring, code review, subagent, skill e hook personalizzati." },
+      { "code": "Ch", "title": "Claude in Chrome", "description": "Automazione e test nel browser: navigazione, verifica delle interfacce, debugging di console e richieste di rete direttamente sulle pagine." },
+      { "code": "Di", "title": "Dispatch", "description": "Delego attività anche da mobile e coordino più sessioni in parallelo, lasciando lavorare gli agenti in background." },
+      { "code": "Cw", "title": "Cowork", "description": "Agenti anche oltre il codice: ricerca, documenti, analisi di file e automazione delle attività ricorrenti." },
+      { "code": "De", "title": "Moduli Design", "description": "Dall'idea al prototipo: mockup, design system e interfacce generate e iterate con l'AI prima di scrivere codice." },
+      { "code": "Mc", "title": "MCP, plugin e API", "description": "Connettori MCP, plugin e integrazione dei modelli Claude via API nei prodotti (assistenti, classificazione, tool use)." }
     ],
 
     "education": [
@@ -497,12 +507,13 @@ window.SITE_DATA = {
 
   en: {
     "ui": {
-      "nav": { "services": "Services", "projects": "Projects", "skills": "Skills", "experience": "Experience", "formation": "Formation", "hobbies": "Hobbies", "contact": "Contact" },
+      "nav": { "services": "Services", "projects": "Projects", "skills": "Skills", "experience": "Experience", "formation": "Formation", "hobbies": "Hobbies", "ai": "AI", "contact": "Contact" },
       "hero": { "ctaWork": "See the work", "ctaContact": "Get in touch" },
       "brandsLabel": "BRANDS I'VE WORKED WITH",
       "projectsSection": { "eyebrow": "SELECTED WORK", "heading": "Projects", "lead": "A slice of what I've shipped. Tap any card for the full write-up, stack, and resources.", "viewDetails": "View details →" },
       "bringSection": { "eyebrow": "WHAT I BRING", "heading": "What I can own" },
       "experienceSection": { "eyebrow": "CAREER", "heading": "Experience" },
+      "aiSection": { "eyebrow": "BUILDING WITH AI", "heading": "AI-first workflow", "lead": "Over the past months I've focused on deepening and reshaping my development workflow around AI, with Claude at the center. I keep studying and staying up to date with what's new in the field, bringing every new tool straight into real projects." },
       "servicesSection": { "eyebrow": "WHAT I OFFER", "heading": "Services" },
       "stackSection": { "eyebrow": "TOOLS OF THE TRADE", "heading": "Stack", "primaryTag": "Primary" },
       "educationSection": { "eyebrow": "FORMATION", "heading": "Education" },
@@ -527,6 +538,15 @@ window.SITE_DATA = {
       {"role": "Deployment Technician", "company": "Gruppo Unipol", "dateStart": "August 2023", "dateEnd": "December 2023", "description": "Release and troubleshooting of Angular and Java/Spring company applications on IBM WebSphere, working with development and infrastructure teams."},
       {"role": "Front-end Developer", "company": "Edooko | Building knowledge", "dateStart": "January 2023", "dateEnd": "June 2024", "description": "I worked as a front-end developer in Flutter on UI/UX and design for Edooko's web app and Android app, integrating the front-end with the Node.js and MongoDB back-end. I handled the user interface and user experience, taking care of the visual design and usability of the application, working closely with the product team to translate requirements into functional, consistent solutions across web and mobile."},
       { "role": "IT Systems Technician", "company": "PC Pratica", "dateStart": "April 2022", "dateEnd": "October 2022", "description": "I handled restoring and repairing company computers, as well as setting up and managing internal networks (Ethernet, Wi-Fi repeaters, DHCP configuration, etc.). I installed VOIP systems and phone switchboards at various client companies, gaining hands-on hardware experience, working with NAS systems and storage solutions, and following related company operational processes." }
+    ],
+
+    "aiTools": [
+      { "code": "Cc", "title": "Claude Code", "description": "Agentic coding in my day-to-day work: end-to-end features, refactoring, code review, subagents, custom skills and hooks." },
+      { "code": "Ch", "title": "Claude in Chrome", "description": "Browser automation and testing: navigating, checking interfaces, debugging console and network requests right on the page." },
+      { "code": "Di", "title": "Dispatch", "description": "Handing off tasks even from mobile and coordinating several sessions in parallel, with agents working in the background." },
+      { "code": "Cw", "title": "Cowork", "description": "Agents beyond code: research, documents, file analysis and automating recurring work." },
+      { "code": "De", "title": "Design modules", "description": "From idea to prototype: mockups, design systems and interfaces generated and iterated with AI before writing code." },
+      { "code": "Mc", "title": "MCP, plugins & API", "description": "MCP connectors, plugins and integrating Claude models via API into products (assistants, classification, tool use)." }
     ],
 
     "education": [
