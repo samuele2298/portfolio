@@ -324,7 +324,7 @@ window.SITE_DATA = {
 
     "experience": [
       {"role": "Sviluppatore Full-stack", "company": "DireQ Srl", "dateStart": "agosto 2024", "dateEnd": "Oggi", "description": "Sviluppo e gestisco un sistema di arbitraggio crypto a microservizi che movimenta circa 2 milioni di euro, integrato con le API di più exchange per monitorare ed eseguire le opportunità in tempo reale. Lavoro inoltre full stack in Angular, Node.js e TypeScript su una piattaforma di messaggistica (app B2C, prodotto B2B, tool interni), incluso il monitoraggio con Nagios."},
-      {"role": "Sviluppatore Full Stack", "company": "Rate · startup social network · part-time · remoto", "dateStart": "agosto 2024", "dateEnd": "giugno 2026", "description": "Ho sviluppato l'app end-to-end: architettura, API REST, app Flutter, deploy e infrastruttura. Ho realizzato feed con stories e reels, messaggi diretti e una pipeline media lato server (FFmpeg), oltre a notifiche push e login Google/Apple. Stack: Node.js/Express, PostgreSQL, Redis, Firebase, AWS S3."},
+      {"role": "Sviluppatore Full Stack", "company": "Rate · social network · part-time · remoto", "dateStart": "agosto 2024", "dateEnd": "giugno 2026", "description": "Ho sviluppato l'app end-to-end: architettura, API REST, app Flutter, deploy e infrastruttura. Ho realizzato feed con stories e reels, messaggi diretti e una pipeline media lato server (FFmpeg), oltre a notifiche push e login Google/Apple. Stack: Node.js/Express, PostgreSQL, Redis, Firebase, AWS S3."},
       {"role": "Sviluppatore front-end", "company": "undicizerouno (succursale Gruppo Unipol)", "dateStart": "gennaio 2024", "dateEnd": "agosto 2024", "description": "Sviluppo front-end in Angular sui prodotti assicurativi core e sui processi interni di Unipol, in collaborazione con il team back-end Java/Spring sull'integrazione delle API."},
       {"role": "Tecnico di Deployment", "company": "Gruppo Unipol", "dateStart": "agosto 2023", "dateEnd": "dicembre 2023", "description": "Rilascio e troubleshooting delle applicazioni aziendali Angular e Java/Spring su IBM WebSphere, insieme ai team di sviluppo e infrastruttura."},
       {"role": "Sviluppatore front-end", "company": "Edooko | Building knowledge", "dateStart": "gennaio 2023", "dateEnd": "giugno 2024", "description": "Ho lavorato come sviluppatore front-end in Flutter su UI/UX e design per la web app e l'app Android di Edooko, integrando il front-end con il back-end Node.js e MongoDB. Mi sono occupato dell'interfaccia utente e dell'esperienza utente, curando l'aspetto grafico e l'usabilità dell'applicazione, in stretta collaborazione con il team di prodotto per tradurre le esigenze in soluzioni funzionali e coerenti su web e mobile."},
@@ -362,7 +362,7 @@ window.SITE_DATA = {
         "description": [
           "Refida è una piattaforma verticale per il project management nel settore costruzioni/ristrutturazioni. Copre l'intero ciclo di vita di una commessa: pianificazione del budget, gestione delle voci di lavoro (item), gare d'appalto con fornitori (pre-qualifica, offerta, aggiudicazione), fino a purchase order/contratti e al relativo cash flow con rate e pagamenti.",
           "Supporta due tipi di utenti: l'organizzazione principale che gestisce progetti, item e gare, e i collaboratori invitati con accesso limitato ai soli item assegnati. Include autenticazione con 2FA via email e un flusso di invito per i sub-user.",
-          "Ho seguito il progetto end to end: architettura, backend API, frontend, deploy e infrastruttura."
+          "Ho sviluppato architettura, backend API, frontend, deploy e infrastruttura."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.rate, {
@@ -371,16 +371,16 @@ window.SITE_DATA = {
         "description": [
           "Rate è un'app social pensata attorno al concetto di rating dei contenuti: gli utenti pubblicano foto/video, li condividono in un feed con storie e reel, e ricevono reazioni e feedback dalla community. Include anche una sezione \"asks\" per domande/prompt, ricerca utenti/contenuti e messaggistica diretta (inbox).",
           "Login con Google e Apple, notifiche push, upload ed elaborazione media (immagini e video, con conversione/compressione lato server).",
-          "Ho seguito il progetto end to end: architettura, backend API, app Flutter, deploy e infrastruttura."
+          "Ho sviluppato architettura, backend API, app Flutter, deploy e infrastruttura."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.helperclock, {
         "title": "HelperClock",
         "shortDescription": "App Flutter per timbrare entrata/uscita dal lavoro, con riepilogo ore giornaliere/settimanali e promemoria via notifiche locali.",
         "description": [
-          "HelperClock è un semplice tool personale per tracciare le ore di lavoro: timbratura di entrata/uscita, calcolo automatico delle ore lavorate nella giornata e riepilogo settimanale. Tutto funziona offline, senza account né server: i dati restano sul dispositivo.",
+          "HelperClock è un semplice tool per tracciare le ore di lavoro: timbratura di entrata/uscita, calcolo automatico delle ore lavorate nella giornata e riepilogo settimanale. Tutto funziona offline, senza account né server: i dati restano sul dispositivo.",
           "Include notifiche locali per ricordare di timbrare l'uscita, così da non perdere traccia delle ore.",
-          "Progetto interamente client-side: niente hosting da mantenere, per questo il link qui sotto apre un mock cliccabile invece di un sito live."
+          "Interamente client-side: niente hosting da mantenere, per questo il link qui sotto apre un mock cliccabile invece di un sito live."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.thera, {
@@ -389,7 +389,7 @@ window.SITE_DATA = {
         "description": [
           "Thera è un assistente personale basato su Claude (Anthropic) pensato come \"secondo cervello\": una chat che tiene traccia di task, progetti, abitudini, persone/relazioni e stato emotivo dell'utente, con notifiche proattive e promemoria calcolati (ricorrenze via rrule, notifiche push).",
           "Il backend espone moduli dedicati per memoria a lungo termine, tag, quick actions e dashboard riepilogativa; il client Flutter (mobile + web) gestisce autenticazione Google, notifiche locali/push e sync offline-first.",
-          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, app Flutter, integrazione LLM."
+          "Ho sviluppato architettura, backend Node/Express, app Flutter e integrazione LLM."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.emailradar, {
@@ -398,7 +398,7 @@ window.SITE_DATA = {
         "description": [
           "EmailRadar analizza e instrada le email in arrivo con un motore AI (Gemini/Groq) che classifica messaggi, estrae contesto ed li assegna alle code corrette (inbox, review, lead). Include gestione contatti, campagne email e allegati.",
           "Billing via Stripe con piani a consumo, autenticazione utenti e un client Flutter Web per la dashboard operativa.",
-          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, integrazione modelli AI, frontend Flutter Web."
+          "Ho sviluppato architettura, backend Node/Express, integrazione dei modelli AI e frontend Flutter Web."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.tactica, {
@@ -406,7 +406,7 @@ window.SITE_DATA = {
         "shortDescription": "Gioco educativo di strategia basato sulla teoria dei giochi, pensato per bambini 7-10 anni, con 5 modalità di gioco.",
         "description": [
           "Tactica è un gioco educativo Flutter Web che insegna concetti di teoria dei giochi e pensiero strategico a bambini tra i 7 e i 10 anni, attraverso 5 modalità di gioco differenti.",
-          "Progetto personale, incentrato su design didattico e UX per un pubblico giovane, interamente client-side."
+          "Ho curato design didattico, UX per un pubblico giovane e sviluppo dell'app, interamente client-side."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.aoefightsimulator, {
@@ -415,7 +415,7 @@ window.SITE_DATA = {
         "description": [
           "Simulatore di scontri per Age of Empires IV: motore di combattimento 2D semplificato (mischia/distanza, cooldown, ambienti con ostacoli o strutture guarnite) alimentato dai dati reali del gioco (aoe4world/data).",
           "UI dark con campo di battaglia live, grafici delle risorse in tempo reale e una modalità Monte Carlo per stimare win rate e trade ratio su migliaia di simulazioni.",
-          "Progetto personale nato dalla passione per gli RTS competitivi, backend Node/Express con WebSocket per l'aggiornamento live della simulazione."
+          "Ho sviluppato il motore di simulazione, il backend Node/Express con WebSocket per l'aggiornamento live e l'interfaccia Canvas."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.trendr, {
@@ -424,7 +424,7 @@ window.SITE_DATA = {
         "description": [
           "Trendr è un'app social dove gli utenti rispondono con uno swipe a domande/trend, con risultati segmentati per fascia d'età, genere, settore e interessi per esplorare come cambiano le opinioni tra gruppi diversi.",
           "Backend con localizzazione multi-lingua, gestione di tag/interessi/settori e categorie anagrafiche; app Flutter con swipe card, condivisione risultati e notifiche push.",
-          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, app Flutter, deploy e infrastruttura."
+          "Ho sviluppato architettura, backend Node/Express, app Flutter, deploy e infrastruttura."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.queeup, {
@@ -433,7 +433,7 @@ window.SITE_DATA = {
         "description": [
           "QueeUp permette ad attività commerciali di sostituire la fila fisica con una coda virtuale: i clienti si prenotano, ricevono aggiornamenti in tempo reale via WebSocket sulla propria posizione e vengono notificati quando è il loro turno.",
           "Dashboard di gestione coda per l'operatore, autenticazione e billing via Stripe per i piani a abbonamento.",
-          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, frontend Angular/PrimeNG."
+          "Ho sviluppato architettura, backend Node/Express e frontend Angular/PrimeNG."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.sonar, {
@@ -442,7 +442,7 @@ window.SITE_DATA = {
         "description": [
           "Sonar è un sistema di trading che monitora più exchange crypto in tempo reale per individuare opportunità di arbitraggio, con un motore di indicatori tecnici, gestione ordini/coda tramite code Redis e cancellazione ordini cross-exchange.",
           "Dashboard Angular con viste su bilanci, opportunità, storico, simboli/coppie e configurazione strategie; comunicazione realtime via WebSocket con i worker di backend.",
-          "Progetto personale nel dominio del trading algoritmico, precursore del sistema di arbitraggio crypto sviluppato professionalmente in DireQ Srl."
+          "Ho sviluppato il motore di monitoraggio degli exchange, la gestione ordini su Redis, i worker di backend e la dashboard Angular."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.signal, {
@@ -450,8 +450,8 @@ window.SITE_DATA = {
         "shortDescription": "Motore di generazione segnali e backtesting per strategie di trading algoritmico (breakout, ranging, momentum).",
         "description": [
           "Signal è un motore Node.js per lo sviluppo e il backtesting di strategie di trading quantitativo: include diverse strategie (breakout, ranging, random benchmark) e un modulo di backtest con salvataggio dei risultati.",
-          "Dati e stato persistiti su Supabase; pensato come laboratorio personale per validare idee di trading prima di portarle in produzione.",
-          "Progetto personale, solo backend/engine, senza interfaccia grafica."
+          "Dati e stato persistiti su Supabase; pensato per validare idee di trading prima di portarle in produzione.",
+          "Ho sviluppato il motore, le strategie e il modulo di backtest (solo backend, senza interfaccia grafica)."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.leadsniper, {
@@ -460,7 +460,7 @@ window.SITE_DATA = {
         "description": [
           "LeadSniper è uno strumento di lead generation che analizza Reddit alla ricerca di post e commenti rilevanti per un set di keyword e subreddit scelti dall'utente, restituendo una lista di potenziali lead.",
           "Storico delle ricerche (screening) salvato per utente, autenticazione con Passport e billing via Stripe per i piani a abbonamento.",
-          "Progetto personale, sviluppato end to end: architettura, backend Node/Express, frontend Angular/PrimeNG."
+          "Ho sviluppato architettura, backend Node/Express e frontend Angular/PrimeNG."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
@@ -468,8 +468,8 @@ window.SITE_DATA = {
         "shortDescription": "Package Flutter per selezionare foto/video e comporli in layout a mosaico, con ottimizzazione media integrata.",
         "description": [
           "Mosaic Image Picker è un package Flutter riutilizzabile per selezionare più immagini/video e disporli in layout a mosaico personalizzabili (drag & drop degli slot), con estrazione EXIF e compressione media integrata.",
-          "Nato per essere condiviso tra più app personali (incluso Rate) che necessitano di un media picker con layout a griglia avanzati.",
-          "Progetto personale, pubblicato come package Flutter standalone con app di esempio."
+          "Pensato per essere riutilizzato in più app (incluso Rate) che necessitano di un media picker con layout a griglia avanzati.",
+          "Ho sviluppato il package, i layout a mosaico, la pipeline di compressione e l'app di esempio."
         ]
       })
     ],
@@ -522,7 +522,7 @@ window.SITE_DATA = {
 
     "experience": [
       {"role": "Full-stack Developer", "company": "DireQ Srl", "dateStart": "August 2024", "dateEnd": "Now", "description": "I develop and manage a microservices-based crypto arbitrage system handling around €2M in capital, integrating multiple exchange APIs to monitor and execute opportunities in real time. I also work full stack with Angular, Node.js and TypeScript on a messaging platform (B2C app, B2B product, internal tools), including monitoring with Nagios."},
-      {"role": "Full Stack Developer", "company": "Rate · social network startup · part-time · remote", "dateStart": "August 2024", "dateEnd": "June 2026", "description": "Developed the app end to end: architecture, REST APIs, the Flutter app, deployment and infrastructure. Built feed with stories and reels, direct messaging and a server-side media pipeline (FFmpeg), plus push notifications and Google/Apple sign-in. Stack: Node.js/Express, PostgreSQL, Redis, Firebase, AWS S3."},
+      {"role": "Full Stack Developer", "company": "Rate · social network · part-time · remote", "dateStart": "August 2024", "dateEnd": "June 2026", "description": "Developed the app end to end: architecture, REST APIs, the Flutter app, deployment and infrastructure. Built feed with stories and reels, direct messaging and a server-side media pipeline (FFmpeg), plus push notifications and Google/Apple sign-in. Stack: Node.js/Express, PostgreSQL, Redis, Firebase, AWS S3."},
       {"role": "Front-end Developer", "company": "undicizerouno (Gruppo Unipol branch)", "dateStart": "January 2024", "dateEnd": "August 2024", "description": "Front-end development in Angular on Unipol's core insurance products and internal processes, working with the Java/Spring back-end team on API integration."},
       {"role": "Deployment Technician", "company": "Gruppo Unipol", "dateStart": "August 2023", "dateEnd": "December 2023", "description": "Release and troubleshooting of Angular and Java/Spring company applications on IBM WebSphere, working with development and infrastructure teams."},
       {"role": "Front-end Developer", "company": "Edooko | Building knowledge", "dateStart": "January 2023", "dateEnd": "June 2024", "description": "I worked as a front-end developer in Flutter on UI/UX and design for Edooko's web app and Android app, integrating the front-end with the Node.js and MongoDB back-end. I handled the user interface and user experience, taking care of the visual design and usability of the application, working closely with the product team to translate requirements into functional, consistent solutions across web and mobile."},
@@ -560,7 +560,7 @@ window.SITE_DATA = {
         "description": [
           "Refida is a vertical project management platform for the construction/renovation industry. It covers the full lifecycle of a project: budget planning, work item management, supplier tenders (pre-qualification, bidding, award), all the way to purchase orders/contracts and the related cash flow with installments and payments.",
           "It supports two user types: the main organization managing projects, items and tenders, and invited collaborators with access limited to their assigned items. Includes email 2FA authentication and an invite flow for sub-users.",
-          "I worked on the project end to end: architecture, backend API, frontend, deployment and infrastructure."
+          "I built the architecture, backend API, frontend, deployment and infrastructure."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.rate, {
@@ -569,16 +569,16 @@ window.SITE_DATA = {
         "description": [
           "Rate is a social app built around content rating: users post photos/videos, share them in a feed with stories and reels, and get reactions and feedback from the community. It also includes an \"asks\" section for questions/prompts, search, and direct messaging (inbox).",
           "Google and Apple sign-in, push notifications, media upload and processing (images and video, with server-side conversion/compression).",
-          "I worked on the project end to end: architecture, backend API, the Flutter app, deployment and infrastructure."
+          "I built the architecture, backend API, the Flutter app, deployment and infrastructure."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.helperclock, {
         "title": "HelperClock",
         "shortDescription": "A Flutter app to clock in/out of work, with daily/weekly hour summaries and local-notification reminders.",
         "description": [
-          "HelperClock is a simple personal tool for tracking work hours: clock in/out, automatic calculation of hours worked per day, and a weekly summary. Everything runs offline, no account or server needed — data stays on the device.",
+          "HelperClock is a simple tool for tracking work hours: clock in/out, automatic calculation of hours worked per day, and a weekly summary. Everything runs offline, no account or server needed — data stays on the device.",
           "Includes local notifications to remind you to clock out, so you never lose track of your hours.",
-          "A fully client-side project: no hosting to maintain, which is why the link below opens a clickable mock instead of a live site."
+          "Fully client-side: no hosting to maintain, which is why the link below opens a clickable mock instead of a live site."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.thera, {
@@ -587,7 +587,7 @@ window.SITE_DATA = {
         "description": [
           "Thera is a personal assistant built on Claude (Anthropic), designed as a \"second brain\": a chat that tracks tasks, projects, habits, people/relationships and emotional state, with proactive notifications and computed reminders (recurrences via rrule, push notifications).",
           "The backend exposes dedicated modules for long-term memory, tags, quick actions and a summary dashboard; the Flutter client (mobile + web) handles Google auth, local/push notifications and offline-first sync.",
-          "Personal project, built end to end: architecture, Node/Express backend, Flutter app, LLM integration."
+          "I built the architecture, Node/Express backend, Flutter app and LLM integration."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.emailradar, {
@@ -596,7 +596,7 @@ window.SITE_DATA = {
         "description": [
           "EmailRadar analyzes and routes incoming email with an AI engine (Gemini/Groq) that classifies messages, extracts context and assigns them to the right queues (inbox, review, leads). Includes contact management, email campaigns and attachments.",
           "Stripe billing with usage-based plans, user authentication and a Flutter Web client for the operational dashboard.",
-          "Personal project, built end to end: architecture, Node/Express backend, AI model integration, Flutter Web frontend."
+          "I built the architecture, Node/Express backend, AI model integration and Flutter Web frontend."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.tactica, {
@@ -604,7 +604,7 @@ window.SITE_DATA = {
         "shortDescription": "An educational strategy game based on game theory, built for kids aged 7-10, with 5 game modes.",
         "description": [
           "Tactica is an educational Flutter Web game that teaches game theory concepts and strategic thinking to children aged 7 to 10, across 5 different game modes.",
-          "Personal project focused on instructional design and UX for a young audience, fully client-side."
+          "I handled the instructional design, UX for a young audience and app development, fully client-side."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.aoefightsimulator, {
@@ -613,7 +613,7 @@ window.SITE_DATA = {
         "description": [
           "A combat simulator for Age of Empires IV: a simplified 2D fight engine (melee/ranged, cooldowns, environments with obstacles or garrisoned structures) powered by real in-game data (aoe4world/data).",
           "Dark UI with a live battlefield, real-time resource charts, and a Monte Carlo mode to estimate win rate and trade ratio across thousands of simulations.",
-          "Personal project born out of a passion for competitive RTS games, Node/Express backend with WebSocket for live simulation updates."
+          "I built the simulation engine, the Node/Express backend with WebSocket for live updates, and the Canvas UI."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.trendr, {
@@ -622,7 +622,7 @@ window.SITE_DATA = {
         "description": [
           "Trendr is a social app where users swipe to answer trending questions, with results segmented by age group, gender, sector and interests to explore how opinions differ across groups.",
           "Backend with multi-language localization, tag/interest/sector management and demographic categories; Flutter app with swipe cards, result sharing and push notifications.",
-          "Personal project, built end to end: architecture, Node/Express backend, Flutter app, deployment and infrastructure."
+          "I built the architecture, Node/Express backend, Flutter app, deployment and infrastructure."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.queeup, {
@@ -631,7 +631,7 @@ window.SITE_DATA = {
         "description": [
           "QueeUp lets businesses replace a physical line with a virtual queue: customers join remotely, get real-time updates on their position via WebSocket, and are notified when it's their turn.",
           "A queue management dashboard for the operator, authentication and Stripe billing for subscription plans.",
-          "Personal project, built end to end: architecture, Node/Express backend, Angular/PrimeNG frontend."
+          "I built the architecture, Node/Express backend and Angular/PrimeNG frontend."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.sonar, {
@@ -640,7 +640,7 @@ window.SITE_DATA = {
         "description": [
           "Sonar is a trading system that monitors multiple crypto exchanges in real time to spot arbitrage opportunities, with a technical-indicators engine, order/queue management through Redis queues and cross-exchange order cancellation.",
           "Angular dashboard with views for balances, opportunities, history, symbols/pairs and strategy configuration; real-time communication via WebSocket with backend workers.",
-          "Personal project in the algorithmic trading space, a precursor to the crypto arbitrage system later built professionally at DireQ Srl."
+          "I built the exchange monitoring engine, Redis-based order management, the backend workers and the Angular dashboard."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.signal, {
@@ -648,8 +648,8 @@ window.SITE_DATA = {
         "shortDescription": "A signal-generation and backtesting engine for algorithmic trading strategies (breakout, ranging, momentum).",
         "description": [
           "Signal is a Node.js engine for developing and backtesting quantitative trading strategies: it includes several strategies (breakout, ranging, random benchmark) and a backtesting module with result persistence.",
-          "Data and state persisted on Supabase; built as a personal lab to validate trading ideas before moving them to production.",
-          "Personal project, backend/engine only, no graphical interface."
+          "Data and state persisted on Supabase; built to validate trading ideas before moving them to production.",
+          "I built the engine, the strategies and the backtesting module (backend only, no graphical interface)."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.leadsniper, {
@@ -658,7 +658,7 @@ window.SITE_DATA = {
         "description": [
           "LeadSniper is a lead generation tool that scans Reddit for posts and comments matching a set of keywords and subreddits chosen by the user, returning a list of potential leads.",
           "Per-user search (screening) history, Passport-based authentication and Stripe billing for subscription plans.",
-          "Personal project, built end to end: architecture, Node/Express backend, Angular/PrimeNG frontend."
+          "I built the architecture, Node/Express backend and Angular/PrimeNG frontend."
         ]
       }),
       Object.assign({}, PROJECT_SHARED.mosaicimagepicker, {
@@ -666,8 +666,8 @@ window.SITE_DATA = {
         "shortDescription": "A Flutter package for picking photos/videos and arranging them into mosaic layouts, with built-in media optimization.",
         "description": [
           "Mosaic Image Picker is a reusable Flutter package for selecting multiple images/videos and arranging them into customizable mosaic layouts (drag & drop slots), with EXIF extraction and built-in media compression.",
-          "Built to be shared across several personal apps (including Rate) that need a media picker with advanced grid layouts.",
-          "Personal project, published as a standalone Flutter package with an example app."
+          "Designed to be reused across several apps (including Rate) that need a media picker with advanced grid layouts.",
+          "I built the package, the mosaic layouts, the compression pipeline and the example app."
         ]
       })
     ],
